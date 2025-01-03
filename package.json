@@ -11,9 +11,13 @@
   "dependencies": {
     "@react-router/node": "^7.1.1",
     "@react-router/serve": "^7.1.1",
+    "@reduxjs/toolkit": "^2.5.0",
+    "@supabase/supabase-js": "^2.47.10",
     "isbot": "^5.1.17",
+    "lucide-react": "^0.469.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
     "react-router": "^7.1.1"
   },
   "devDependencies": {
@@ -23,6 +27,7 @@
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",
     "cross-env": "^7.0.3",
+    "daisyui": "^4.12.23",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.2",
