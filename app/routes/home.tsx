@@ -1,4 +1,3 @@
-import withAuth from "utils/withAuth";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -13,4 +12,4 @@ function Home() {
 }
  
 
-export default withAuth(Home);
+export default Home;

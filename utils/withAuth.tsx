@@ -3,7 +3,6 @@ import { useAppDispatch, useAppSelector } from "store/hooks"
 import supabase from "./supabase"
 import { authActions } from "store/context/authSlice"
 import Loading from "~/components/Loading"
-import { Navigate } from "react-router"
 import { LOGIN } from "~/constants"
 
 "use client"
@@ -41,7 +40,8 @@ const withAuth = (Component: React.ComponentType) => {
     }
     
     if (!isAuthenticated) {
-      return <Navigate to={LOGIN} />
+      window.location.href = LOGIN
+      
     }
 
     return <Component {...props} />

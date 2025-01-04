@@ -8,7 +8,7 @@ import type { Route } from './+types/login';
 
 export function meta({  }: Route.MetaArgs) {
   return [
-    { title: "Login" },
+    { title: "Login - " + APP_TITLE },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
@@ -17,8 +17,6 @@ type Schema = {
   email: string;
   password: string;
 }
-
-type Props = {}
 
 const Login = (_: Route.ComponentProps) => {
 

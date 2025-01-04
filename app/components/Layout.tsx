@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from './Header'
 import { Outlet } from 'react-router'
+import  withAuth from 'utils/withAuth'
 
 type Props = {
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Layout = (props: Props) => {
@@ -18,4 +19,4 @@ const Layout = (props: Props) => {
   )
 }
 
-export default Layout
+export default withAuth(Layout)
