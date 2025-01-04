@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from 'react-router'
 import { useAppSelector } from 'store/hooks'
 import type { MenuItem } from 'types/Menu'
 import supabase from 'utils/supabase'
-import { APP_TITLE, HOME, PROFILE } from '~/constants'
+import { APP_TITLE, DEVOTEES, HOME, PROFILE } from '~/constants'
 
 type Props = {}
 
@@ -14,24 +14,8 @@ const Header = (props: Props) => {
   return (
     <div className="navbar bg-base-300">
       <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost">
-            <MenuIcon size={24} />
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><a>Item 1</a></li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-              </ul>
-            </li>
-            <li><a>Item 3</a></li>
-          </ul>
-        </div>
+        <MenuLeft />
+
         <NavLink to={HOME} className="btn btn-ghost text-xl">
           {APP_TITLE}
         </NavLink>
@@ -83,7 +67,7 @@ function AvatarMenu(){
   
 
   return (
-    <div className='dropdown dropdown-end'>
+    <div className='dropdown dropdown-end z-10'>
     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
       <div className="w-10 rounded-full">
         <img
@@ -108,6 +92,41 @@ function AvatarMenu(){
           <li key={index}>
             <a onClick={item.onClick} className="flex items-center gap-2">
               {item.icon}
+              <span>{item.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function MenuLeft(){
+
+  const navigate = useNavigate();
+
+  const menuList : MenuItem[] = [
+    {
+      name: 'Dashboard',
+      onClick: () => navigate(HOME)
+    },
+    {
+      name: 'दानदाता',
+      onClick: () => navigate(DEVOTEES)
+    },
+  ]
+
+  return (
+    <div className="dropdown">
+      <div tabIndex={0} role="button" className="btn btn-ghost">
+        <MenuIcon size={24} />
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-200 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        {menuList.map((item, index) => (
+          <li key={index}>
+            <a onClick={item.onClick} className="flex items-center gap-2">
               <span>{item.name}</span>
             </a>
           </li>

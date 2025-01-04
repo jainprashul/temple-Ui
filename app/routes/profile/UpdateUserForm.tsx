@@ -48,10 +48,10 @@ export function ProfileForm({ open, setOpen }: Props) {
         <br />
         <form onSubmit={handleSubmit} className="space-y-4">
           <label className="input input-bordered flex items-center gap-2">
-            <input required name='name' type="text" className="grow" placeholder="Name" />
+            <input defaultValue={user?.user_metadata.name} required name='name' type="text" className="grow" placeholder="Name" />
           </label>
           <label className="input input-bordered flex items-center gap-2">
-            <input required name='phone' type="text" className="grow" placeholder="Phone" />
+            <input defaultValue={user?.user_metadata.phone} required name='phone' type="text" className="grow" placeholder="Phone" />
           </label>
           <button type="submit" className="btn btn-primary w-full">
             {loading ? <Loader className="animate-spin" size={16} /> : 'Save changes'}
