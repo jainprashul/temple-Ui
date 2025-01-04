@@ -35,9 +35,12 @@ function Home() {
 
     <div className="card shadow-lg bg-base-200">
       <div className="card-body lg:flex-row justify-between">
-        <div className="">
+        <div className="flex justify-items-center gap-2">
+          <img src="/temple.svg" alt="logo" className="w-16 h-16" />
+          <div className="my-auto">
           <h2 className="card-title">श्री आदिनाथ धाम</h2>
           <p>श्री दिगंबर जैन परवार पंचायत, छिन्दवाड़ा</p>
+          </div>
         </div>
         <TimeCounter />
       </div>

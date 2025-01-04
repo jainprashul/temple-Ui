@@ -26,6 +26,12 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
   { rel: "stylesheet", href: stylesheet },
+  { rel: "manifest", href: "/site.webmanifest" },
+  { rel: "icon", type: "image/png", href: "/favicon-32x32.png", sizes: "32x32" },
+  { rel: "icon", type: "image/png", href: "/favicon-16x16.png", sizes: "16x16" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+  { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#5bbad5" },
+  
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

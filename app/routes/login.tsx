@@ -53,6 +53,7 @@ const Login = (_: Route.ComponentProps) => {
 
   return (
     <div className="max-w-lg mx-auto flex flex-col items-center justify-center flex-1 p-10">
+      <img src="/temple.svg" alt="logo" className="h-40 mb-4" />
       <h2 className="text-2xl mb-8 font-semibold">{APP_TITLE}</h2>
       <h3 className="text-center text-lg font-semibold">Welcome back!</h3>
       <h1 className="text-3xl font-bold mb-12">Login</h1>
