@@ -8,13 +8,13 @@ type Props = {
 
 const Layout = (props: Props) => {
   return (
-    <div>
+    <>
       <Header></Header>
       <div className="container mx-auto p-4">
         <Outlet />
         {props.children}
       </div>
-    </div>
+    </>
   )
 }
 

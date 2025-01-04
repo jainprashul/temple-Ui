@@ -3,10 +3,10 @@ import { Key, LoaderCircle, LogInIcon, Mail, User } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { authService } from 'services/authService';
-import { HOME, REGISTER } from '~/constants';
-import type { Route } from './+types/home';
+import { APP_TITLE, HOME, REGISTER } from '~/constants';
+import type { Route } from './+types/login';
 
-export function meta({ }: Route.MetaArgs) {
+export function meta({  }: Route.MetaArgs) {
   return [
     { title: "Login" },
     { name: "description", content: "Welcome to React Router!" },
@@ -20,7 +20,7 @@ type Schema = {
 
 type Props = {}
 
-const Login = (_: Props) => {
+const Login = (_: Route.ComponentProps) => {
 
   const [loading, setLoading] = React.useState(false)
   const [error, setError] = React.useState('')
@@ -54,7 +54,9 @@ const Login = (_: Props) => {
   }
 
   return (
-    <div className="max-w-md mx-auto flex flex-col items-center justify-center flex-1 p-10">
+    <div className="max-w-lg mx-auto flex flex-col items-center justify-center flex-1 p-10">
+      <h2 className="text-2xl mb-8 font-semibold">{APP_TITLE}</h2>
+      <h3 className="text-center text-lg font-semibold">Welcome back!</h3>
       <h1 className="text-3xl font-bold mb-12">Login</h1>
       <form onSubmit={onSubmit} className="space-y-4 w-full flex flex-col justify-center">
 

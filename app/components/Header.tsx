@@ -1,27 +1,22 @@
+import { LogOut, MenuIcon, User, UserIcon } from 'lucide-react'
 import React from 'react'
+import { NavLink, useNavigate } from 'react-router'
+import { useAppSelector } from 'store/hooks'
+import type { MenuItem } from 'types/Menu'
 import supabase from 'utils/supabase'
+import { APP_TITLE, HOME, PROFILE } from '~/constants'
 
 type Props = {}
 
 const Header = (props: Props) => {
-  console.log('Header props:', props , supabase)
+  const navigate = useNavigate()
+  console.log('Header props:', props )
   return (
     <div className="navbar bg-base-300">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
+            <MenuIcon size={24} />
           </div>
           <ul
             tabIndex={0}
@@ -37,11 +32,11 @@ const Header = (props: Props) => {
             <li><a>Item 3</a></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
-          Aadinath Dham
-        </a>
+        <NavLink to={HOME} className="btn btn-ghost text-xl">
+          {APP_TITLE}
+        </NavLink>
       </div>
-      <div className="navbar-end hidden lg:flex">
+      {/* <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li><a>Item 1</a></li>
           <li>
@@ -55,27 +50,69 @@ const Header = (props: Props) => {
           </li>
           <li><a>Item 3</a></li>
         </ul>
-      </div>
+      </div> */}
       <div className="navbar-end">
-        <div className='dropdown dropdown-end'>
-        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            <img
-              alt="Avatar"
-              src="https://api.multiavatar.com/s.png" />
-          </div>
-        </div>
-        <ul
-          tabIndex={0}
-          className="p-2 menu dropdown-content bg-base-200 rounded-box w-52 shadow-lg">
-          <li><a>Profile</a></li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
-          </ul>
-        </div>
+        <AvatarMenu />
       </div>
     </div>
   )
 }
 
 export default Header
+
+
+function AvatarMenu(){
+
+  const navigate = useNavigate();
+  const user = useAppSelector(s => s.auth.user)
+
+
+  const menuList : MenuItem[] = [
+    {
+      name: 'Profile',
+      icon: <UserIcon size={16} />,
+      onClick: () => navigate(PROFILE)
+    },
+    {
+      name: 'Logout',
+      icon: <LogOut size={16} />,
+      onClick: () => supabase.auth.signOut()
+    },
+  ]
+
+  
+
+  return (
+    <div className='dropdown dropdown-end'>
+    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      <div className="w-10 rounded-full">
+        <img
+          alt="Avatar"
+          src={`https://api.multiavatar.com/${user?.email}.png`} />
+      </div>
+    </div>
+    <ul
+      tabIndex={0}
+      className="p-4 menu dropdown-content bg-base-200 rounded-box shadow-lg">
+    
+        <div className="p-2 bg-base-400 block">
+          <p className="text-base font-bold">
+            {user?.user_metadata.name}
+          </p>
+          <p className="text-sm text-base-content">
+          {user?.email}
+          </p>
+        </div>
+
+        {menuList.map((item, index) => (
+          <li key={index}>
+            <a onClick={item.onClick} className="flex items-center gap-2">
+              {item.icon}
+              <span>{item.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
