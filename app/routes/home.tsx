@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/home";
 import { useNavigate } from "react-router";
-import { DEVOTEES } from "~/constants";
+import { DEVOTEE_CREATE, DEVOTEES } from "~/constants";
 
-export function meta({ }: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "Shri Aadinath Dham" },
     { name: "description", content: "श्री दिगंबर जैन परवार पंचायत, छिन्दवाड़ा " },
@@ -29,6 +29,11 @@ function Home() {
         navigate(DEVOTEES);
       }
     },
+    {
+      "title": "नया दानदाता" , "description": "नया दानदाता जोड़ें" , "action": () => {
+        navigate(DEVOTEE_CREATE);
+      }
+    }
   ];
 
   return <>
@@ -83,7 +88,7 @@ type QuickLinkCardProps = {
   action?: () => void;
 };
 
-function QuickLinkCard({ title, description }: { title: string, description: string }) {
+function QuickLinkCard({ title, description }: QuickLinkCardProps) {
   return <div className="card shadow-lg bg-base-200 hover:shadow-xl cursor-pointer">
     <div className="card-body">
       <h2 className="card-title">{title}</h2>

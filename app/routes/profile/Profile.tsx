@@ -1,7 +1,7 @@
 
 import { Edit } from 'lucide-react'
 import moment from 'moment'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ProfileForm } from './UpdateUserForm'
 import { PasswordUpdateDialog } from './UpdatePasswordForm'
 import withAuth from 'utils/withAuth'
@@ -9,7 +9,7 @@ import { useAppSelector } from 'store/hooks'
 import Loading from '~/components/Loading'
 import type { Route } from './+types/Profile'
 
-export function meta({}: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "Profile" },
     { name: "description", content: "Profile page" },
@@ -21,16 +21,12 @@ type Props = {}
 const Profile = (_: Props) => {
   const user = useAppSelector((state) => state.auth.user)
 
+  const [open, setOpen] = React.useState(false)
+  const [passwordOpen, setPasswordOpen] = React.useState(false)
   if (!user) {
     return <Loading />
   }
 
-  useEffect(() => {
-
-  }, [])
-
-  const [open, setOpen] = React.useState(false)
-  const [passwordOpen, setPasswordOpen] = React.useState(false)
 
   function EditIcon() {
     return (

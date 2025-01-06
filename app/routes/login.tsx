@@ -1,12 +1,12 @@
 
-import { Key, LoaderCircle, LogInIcon, Mail, User } from 'lucide-react';
+import { Key, LoaderCircle, LogInIcon, Mail } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 import { authService } from 'services/authService';
 import { APP_TITLE, HOME, REGISTER } from '~/constants';
 import type { Route } from './+types/login';
 
-export function meta({  }: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "Login - " + APP_TITLE },
     { name: "description", content: "Welcome to React Router!" },

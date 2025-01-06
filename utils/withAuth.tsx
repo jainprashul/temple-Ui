@@ -33,7 +33,7 @@ const withAuth = (Component: React.ComponentType) => {
         if (event === 'SIGNED_OUT')
           dispatch(authActions.setUser(null))
       })
-    }, [])
+    }, [dispatch])
 
     if (loading) {
       return <Loading />

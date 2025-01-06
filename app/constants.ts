@@ -11,8 +11,8 @@ export const REGISTER = `/register`
 export const PROFILE = `/profile`
 export const PAYMENT = `/payment`
 export const DEVOTEES = `/devotees`
-export const DEVOTEE_CREATE = `/devotee-create`
-export const DEVOTEE_EDIT = `/devotee-edit`
+export const DEVOTEE_CREATE = `/devotee-new`
+export const DEVOTEE_EDIT = `/devotee-edit/:id`
 export const DEVOTEE_VIEW = `/devotee/:id`
 
 

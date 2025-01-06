@@ -1,5 +1,4 @@
-import { LogOut, MenuIcon, User, UserIcon } from 'lucide-react'
-import React from 'react'
+import { LogOut, MenuIcon, UserIcon } from 'lucide-react'
 import { NavLink, useNavigate } from 'react-router'
 import { useAppSelector } from 'store/hooks'
 import type { MenuItem } from 'types/Menu'
@@ -8,9 +7,7 @@ import { APP_TITLE, DEVOTEES, HOME, PROFILE } from '~/constants'
 
 type Props = {}
 
-const Header = (props: Props) => {
-  const navigate = useNavigate()
-  console.log('Header props:', props )
+const Header = (_: Props) => {
   return (
     <div className="navbar bg-base-300">
       <div className="navbar-start">
