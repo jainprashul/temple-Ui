@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/home";
 import { useNavigate } from "react-router";
-import { DEVOTEE_CREATE, DEVOTEES } from "~/constants";
+import { DEVOTEE_CREATE, DEVOTEES, PAYMENT } from "~/constants";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -17,6 +17,11 @@ function Home() {
     {
       title: "दानदाता", description: "दानदाता सूची", action: () => {
         navigate(DEVOTEES);
+      }
+    },
+    {
+      title: "Quick Deposit", description: "दान करें", action: () => {
+        navigate(PAYMENT);
       }
     },
     {

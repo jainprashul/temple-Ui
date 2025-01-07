@@ -1,7 +1,6 @@
-import React, { useActionState, useEffect, useState } from 'react'
-import type { Route } from './+types/Create';
+import React, { useActionState } from 'react'
+import type { Route } from './+types/Edit';
 import { devoteeService } from 'services/devoteeService';
-import { type Devotee } from 'types/Devotee';
 import Loading from '~/components/Loading';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router';
@@ -16,29 +15,26 @@ export function meta(_: Route.MetaArgs) {
   ];
 }
 
+export async function clientLoader({
+  params,
+}: Route.ClientLoaderArgs) {
+  if(!params.id) return null;
+  const product = devoteeService.get(params.id)
+  return product;
+}
+
 interface Data {
   name: string;
   phone: string;
   address: string;
 }
 
-
-const EditDevotee = ({ params } : Route.ComponentProps) => {
+const EditDevotee = ({ params , loaderData } : Route.ComponentProps) => {
 
   const { id } = params;
   const navigate = useNavigate();
 
-  const [devotee, setDevotee] = useState<Devotee | null>(null);
-
-  useEffect(() => {
-    if (!id) {
-      return;
-    }
-    devoteeService.get(id).then((devotee) => {
-      setDevotee(devotee);
-    });
-  }, [id]);
-
+  const devotee = loaderData;
 
   async function saveDevotee(_: unknown, formData: FormData) {
     if (!id) {
@@ -55,7 +51,7 @@ const EditDevotee = ({ params } : Route.ComponentProps) => {
 
     setTimeout(() => {
       navigate(DEVOTEES);
-    }, 3000);
+    });
     
 } 
 

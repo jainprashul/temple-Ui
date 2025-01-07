@@ -14,5 +14,6 @@ export const DEVOTEES = `/devotees`
 export const DEVOTEE_CREATE = `/devotee-new`
 export const DEVOTEE_EDIT = `/devotee-edit/:id`
 export const DEVOTEE_VIEW = `/devotee/:id`
+export const DEPOSIT_SLIP = `/deposit-slip/:id`
 
 

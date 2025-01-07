@@ -1,4 +1,5 @@
 import type { Devotee } from "types/Devotee";
+import type { Ledger } from "types/Ledger";
 import supabase from "utils/supabase";
 
 export const devoteeService = {
@@ -47,4 +48,13 @@ export const devoteeService = {
         }
         return data[0] as Devotee;
     },
+
+    deposit: async (data : Ledger) => {
+        const { error } = await supabase
+            .from('ledger')
+            .insert(data);
+        if (error) {
+            throw new Error(error.message);
+        }
+    }
 };
