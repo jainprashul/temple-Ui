@@ -1,4 +1,3 @@
-import React, { use } from 'react'
 import type { Route } from './+types/DevoteeView';
 import { devoteeService } from 'services/devoteeService';
 
@@ -18,7 +17,7 @@ export async function clientLoader({
 }
 
 
-const DevoteeView = ({ params, loaderData }: Route.ComponentProps) => {
+const DevoteeView = ({ loaderData }: Route.ComponentProps) => {
 
 
   return (

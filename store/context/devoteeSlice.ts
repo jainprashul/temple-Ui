@@ -17,6 +17,8 @@ export const fetchDevotees = createAsyncThunk('devotee/fetchDevotees', async () 
 });
 
 
+
+
 const devoteeSlice = createSlice({
   name: 'devotee',
   initialState,

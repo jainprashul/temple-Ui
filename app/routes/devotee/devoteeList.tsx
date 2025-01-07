@@ -1,4 +1,5 @@
 import { type ColumnDef } from '@tanstack/react-table';
+import { Edit2, HandCoins, Trash2Icon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router'
 import { devoteeService } from 'services/devoteeService';
@@ -7,7 +8,7 @@ import { fetchDevotees } from 'store/context/devoteeSlice';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import type { Devotee } from 'types/Devotee';
 import Table from '~/components/Table'
-import { DEVOTEE_CREATE } from '~/constants'
+import { DEVOTEE_CREATE, PAYMENT } from '~/constants'
 
 
 type Props = {}
@@ -46,11 +47,15 @@ const DevoteeList = (_: Props) => {
       accessorKey: 'id',
       cell: ({ row, getValue }) => (
         <div className="space-x-2">
-          <NavLink to={`/devotee-edit/${getValue()}`} className="btn btn-sm btn-primary">Edit</NavLink>
-          <button className="btn btn-sm btn-error" onClick={() => {
+           <button onClick={() => navigate(`/devotee-edit/${getValue()}`)} title='Edit' className="btn btn-sm btn-circle btn-link"><Edit2/> </button>
+          <button className="btn btn-sm btn-circle btn-link text-red-600" onClick={() => {
             setIndex(row.index as number);
             (document.getElementById('modal') as HTMLDialogElement)?.showModal()
-          }}>Delete</button>
+          }}>
+            <Trash2Icon />
+          </button>
+          <button onClick={() => navigate(`${PAYMENT}?devoteeId=${getValue()}`)} title='Ledger' className="btn btn-sm btn-circle btn-link"><HandCoins/> </button>
+          
         </div>
       )
     }

@@ -1,5 +1,5 @@
+
 import Autocomplete from "~/components/AutoCompletion";
-import type { Route } from "./+types/payment";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { useActionState, useEffect, useState } from "react";
 import { fetchDevotees } from "store/context/devoteeSlice";
@@ -7,20 +7,21 @@ import { useLocation, useNavigate } from "react-router";
 import { ArrowLeftCircle } from "lucide-react";
 import moment from "moment";
 import type { Devotee } from "types/Devotee";
-import type { Ledger } from "types/Ledger";
-import { devoteeService } from "services/devoteeService";
 import { toast } from "sonner";
-import { printComponent } from "utils/print";
-import DepositSlip from "~/components/DepositSlip";
+import type { Route } from "./+types/booking";
+import { fetchParticulars } from "store/context/bookingSlice";
+import type { Booking } from "types/Booking";
+import { bookingService } from "services/bookingService";
+
 
 export function meta(_: Route.MetaArgs) {
   return [
-    { title: "Deposit" },
-    { name: "description", content: "Deposit money" },
+    { title: "Bookings" },
+    { name: "description", content: "Bookings" },
   ];
 }
 
-const Payment = (_: Route.ComponentProps) => {
+const Bookings = (_: Route.ComponentProps) => {
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
   const devoteeId = searchParams.get('devoteeId');
@@ -29,11 +30,13 @@ const Payment = (_: Route.ComponentProps) => {
   useEffect(() => {
     // Fetch devotees
     dispatch(fetchDevotees());
+    dispatch(fetchParticulars());
   }, [dispatch]);
 
 
   const devoteeList = useAppSelector((state) => state.devotee.devotees);
   const suggestions = devoteeList.map((devotee) => devotee.name);
+  const particulars = useAppSelector((state) => state.booking.particulars);
 
   const [selectedDevotee, setSelectedDevotee] = useState<Devotee | null>();
 
@@ -57,46 +60,40 @@ const Payment = (_: Route.ComponentProps) => {
     if (!selectedDevotee) {
       return;
     }
-    const data: Ledger = {
+    const data: Booking = {
       date: formData.get('date') as string,
-      mode: formData.get('mode') as string,
+      particular : Number(formData.get('particular')),
       amount: Number(formData.get('amount')),
       description: formData.get('details') as string,
       devoteeId: selectedDevotee.id!,
-      type: 'credit'
+      status: 'Payment Pending'
     }
 
-    await devoteeService.deposit(data);
+    await bookingService.create(data);
 
-    const printData = {
-      ...data,
-      devotee: selectedDevotee
-    }
-
-    printComponent(<DepositSlip ledger={printData} />);
-    toast.success('Amount deposited successfully for ' + selectedDevotee.name);
+    toast.success('Booking successfully for ' + selectedDevotee.name);
+    navigate(-1);
   }
 
   return (
     <div>
       <div className="flex gap-1 items-center">
         <button onClick={() => navigate(-1)} className="btn btn-circle btn-link"> <ArrowLeftCircle /> </button>
-        <h1 className='text-2xl font-semibold'>Deposit</h1>
+        <h1 className='text-2xl font-semibold'>Booking</h1>
       </div>
       <hr />
-      <div className="space-y-2 lg:w-1/3">
-        <form >
-          <div className="flex flex-col space-y-2">
-
+      <div className="">
+        <form className="grid lg:grid-cols-2 grid-cols-1 gap-4">
+          <>
             {devoteeId ? <>
               <label className="form-control">
                 <div className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text">Devotee</span>
                 </div>
                 <input type="text" value={selectedDevotee?.name} readOnly className="input input-bordered" />
               </label>
             </> :
-              <Autocomplete defaultValue={selectedDevotee?.name} onValueChange={onNameChange} name="name" title="Name" placeholder="Search Devotee Names" suggestions={suggestions} />
+              <Autocomplete defaultValue={selectedDevotee?.name} onValueChange={onNameChange} name="name" title="Devotee name" placeholder="Search Devotee Names" suggestions={suggestions} />
             }
             <label className="form-control">
               <div className="label">
@@ -107,17 +104,20 @@ const Payment = (_: Route.ComponentProps) => {
 
             <label className="form-control">
               <div className="label">
-                <span className="label-text">Mode</span>
+                <span className="label-text">Particulars</span>
               </div>
-              <select name="mode" className="select select-bordered">
-                <option value="cash">Cash</option>
-                <option value="online">Online</option>
+              <select name="particular" className="select select-bordered">
+                {
+                  particulars.map((particular) => (
+                    <option key={particular.id} value={particular.id}>{particular.particular}</option>
+                  ))
+                }
               </select>
             </label>
 
             <label className="form-control">
               <div className="label">
-                <span className="label-text">Amount *</span>
+                <span className="label-text">Amount</span>
               </div>
               <input required name='amount' type="number" className="input input-bordered" />
             </label>
@@ -129,8 +129,18 @@ const Payment = (_: Route.ComponentProps) => {
               <textarea name='details' className="textarea h-24 textarea-bordered"></textarea>
             </label>
 
+            <label className="form-control">
+              <div className="label">
+                <span className="label-text">Status</span>
+              </div>
+              <select name="status" className="select select-bordered">
+                <option value="Payment Pending">Payment Pending</option>
+                <option value="Payment Done">Payment Done</option>
+              </select>
+            </label>
+
             <button type="submit" formAction={formAction} className="btn btn-primary">Deposit</button>
-          </div>
+          </>
 
 
 
@@ -140,4 +150,4 @@ const Payment = (_: Route.ComponentProps) => {
   )
 }
 
-export default Payment
+export default Bookings
