@@ -50,6 +50,8 @@ const DepositSlip = (props: Props) => {
           <p className='text-sm'>Detail: {props.ledger.description}</p>
         </div>
 
+        <hr className='my-2' />
+
         {/* saluations */}
         <div className='mt-4 text-center'>
           <p className='text-sm'>धन्यवाद</p>
