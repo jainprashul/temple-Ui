@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import  authSlice  from './context/authSlice'
 import  devoteeSlice  from './context/devoteeSlice'
 import  bookingSlice  from './context/bookingSlice'
+import  utilitySlice  from './context/utilitySlice'
 
 const store = configureStore({
   reducer: {
@@ -9,7 +10,8 @@ const store = configureStore({
     // counter: counterReducer,
     auth: authSlice,
     devotee : devoteeSlice,
-    booking : bookingSlice
+    booking : bookingSlice,
+    utility : utilitySlice,
   },
 })
 export type RootState = ReturnType<typeof store.getState>

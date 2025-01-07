@@ -46,7 +46,7 @@ const DevoteeList = (_: Props) => {
       header: "Actions",
       accessorKey: 'id',
       cell: ({ row, getValue }) => (
-        <div className="space-x-2">
+        <div className="join">
            <button onClick={() => navigate(`/devotee-edit/${getValue()}`)} title='Edit' className="btn btn-sm btn-circle btn-link"><Edit2/> </button>
           <button className="btn btn-sm btn-circle btn-link text-red-600" onClick={() => {
             setIndex(row.index as number);

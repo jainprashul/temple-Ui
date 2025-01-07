@@ -57,7 +57,7 @@ const Table = <T,>({
 
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap gap-2">
         <div className='space-x-2'>
           {children}
         </div>

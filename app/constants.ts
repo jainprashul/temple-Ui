@@ -16,5 +16,6 @@ export const DEVOTEE_EDIT = `/devotee-edit/:id`
 export const DEVOTEE_VIEW = `/devotee/:id`
 export const DEPOSIT_SLIP = `/deposit-slip/:id`
 export const BOOKING = `/booking`
+export const LEDGER = `/ledger`
 
 
