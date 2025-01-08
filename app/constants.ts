@@ -21,6 +21,7 @@ export const DEVOTEE_CREATE = `/app/devotee-new`
 export const DEVOTEE_EDIT = `/app/devotee-edit/:id`
 export const DEVOTEE_VIEW = `/app/devotee/:id`
 export const DEPOSIT_SLIP = `/app/deposit-slip/:id`
-export const BOOKING = `/app/booking`
+export const BOOKING_CREATE = `/app/booking/create`
+export const BOOKING_LIST = `/app/booking`
 export const LEDGER = `/app/ledger`
 

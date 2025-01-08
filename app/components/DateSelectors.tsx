@@ -21,11 +21,11 @@ const DateSelector = () => {
 
   return (
     <div className='flex gap-2'>
-      <div className='form-control'>
+      <div className='form-control items-center flex-row gap-2'>
         <label className="label-text">From</label>
         <input value={start} onChange={handleDateChange} name='start' type="date" className="input input-sm input-bordered" />
       </div>
-      <div className='form-control'>
+      <div className='form-control items-center flex-row gap-2'>
         <label className="label-text">To</label>
         <input value={end} onChange={handleDateChange} name='end' type="date" className="input input-sm input-bordered" />
       </div>

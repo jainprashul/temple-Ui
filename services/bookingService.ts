@@ -2,16 +2,42 @@ import type { Booking } from "types/Booking";
 import type { Particulars } from "types/Particulars";
 import supabase from "utils/supabase";
 
+const select = `*,...particulars!inner(particular: particular),...devotees!inner(name: name)`
+
 export const bookingService = {
     list: async () => {
         const { data, error } = await supabase
             .from('bookings')
-            .select('*');
+            .select(select);
         if (error) {
             throw new Error(error.message);
         }
         return data as Booking[] || [];
     },
+
+    listByRange: async (from: string, to: string) => {
+        const { data, error } = await supabase
+            .from('bookings')
+            .select(select)
+            .gte('date', from)
+            .lte('date', to);
+        if (error) {
+            throw new Error(error.message);
+        }
+        return data as Booking[] || [];
+    },
+
+    listByDevotee: async (devoteeId: string) => {
+        const { data, error } = await supabase
+            .from('bookings')
+            .select(select)
+            .match({ devoteeId });
+        if (error) {
+            throw new Error(error.message);
+        }
+        return data as Booking[] || [];
+    },
+
     create: async (data : Booking) => {
         const { error } = await supabase
             .from('bookings')
@@ -41,7 +67,7 @@ export const bookingService = {
     get: async (id : string) => {
         const { data, error } = await supabase
             .from('bookings')
-            .select('*')
+            .select(select)
             .match({ id });
         if (error) {
             throw new Error(error.message);

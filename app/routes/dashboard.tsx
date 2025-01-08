@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/dashboard";
 import { useNavigate } from "react-router";
-import { BOOKING, DEVOTEE_CREATE, DEVOTEES, LEDGER, PAYMENT } from "~/constants";
+import { BOOKING_CREATE, BOOKING_LIST, DEVOTEE_CREATE, DEVOTEES, LEDGER, PAYMENT } from "~/constants";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -26,7 +26,7 @@ function Dashboard() {
     },
     {
       title: "दान घोषणा", description: "दान घोषणा करे", action: () => {
-        navigate(BOOKING);
+        navigate(BOOKING_CREATE);
       }
     },
     {
@@ -35,8 +35,8 @@ function Dashboard() {
       }
     },
     {
-      title: "दान प्रवृत्ति", description: "दान प्रवृत्ति सूची", action: () => {
-        navigate(DEVOTEES);
+      title: "दान घोषणा सूची", description: "दान प्रवृत्ति सूची", action: () => {
+        navigate(BOOKING_LIST);
       }
     },
     {

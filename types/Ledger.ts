@@ -10,6 +10,9 @@ export interface Ledger {
    */
   mode : string;
   description: string;
+
+  // Extra 
+  name ?: string;
 }
 
 

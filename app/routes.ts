@@ -1,5 +1,5 @@
 import { type RouteConfig, index, layout, route } from "@react-router/dev/routes";
-import { BOOKING, DEPOSIT_SLIP, DEVOTEE_CREATE, DEVOTEE_EDIT, DEVOTEE_VIEW, DEVOTEES, GALLERY, HOME, LEDGER, LOGIN, NEWSLETTER, PANCHKALYANK, PAYMENT, PROFILE, REGISTER, VIDEOS } from "./constants";
+import { BOOKING_CREATE, BOOKING_LIST, DEPOSIT_SLIP, DEVOTEE_CREATE, DEVOTEE_EDIT, DEVOTEE_VIEW, DEVOTEES, GALLERY, HOME, LEDGER, LOGIN, NEWSLETTER, PANCHKALYANK, PAYMENT, PROFILE, REGISTER, VIDEOS } from "./constants";
 
 export default [
 
@@ -22,7 +22,8 @@ export default [
     route(DEVOTEE_EDIT, "routes/devotee/Edit.tsx"),
     route(PROFILE, "routes/profile/Profile.tsx"),
     route(DEVOTEE_VIEW, "routes/devotee/DevoteeView.tsx"),
-    route(BOOKING, "routes/booking.tsx"),
+    route(BOOKING_CREATE, "routes/booking.tsx"),
+    route(BOOKING_LIST, "routes/booking/BookingList.tsx"),
     route(LEDGER, "routes/ledger/Ledger.tsx"),
   ]),
   route(DEPOSIT_SLIP, "routes/ledgerPrint.tsx"),

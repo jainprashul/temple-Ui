@@ -13,6 +13,7 @@ type Props<T> = {
   data: T[],
   children?: React.ReactNode
   onRowClick?: (row: Row<T>) => void
+  hideHeader?: boolean
 }
 
 const Table = <T,>({
@@ -26,6 +27,7 @@ const Table = <T,>({
   selectedIndex = -1,
   onRowClick,
   loading = false,
+  hideHeader = false,
 
 }: Props<T>) => {
   const [query, setQuery] = React.useState('')
@@ -57,8 +59,8 @@ const Table = <T,>({
 
   return (
     <>
-      <div className="flex justify-between flex-wrap gap-2">
-        <div className='space-x-2'>
+      {!hideHeader && <div className="flex justify-between flex-wrap gap-2">
+        <div className='space-x-2 flex-1'>
           {children}
         </div>
         <input
@@ -67,7 +69,7 @@ const Table = <T,>({
           placeholder="Search..."
           className="p-2 border border-gray-300 rounded mb-2"
         />
-      </div>
+      </div>}
 
       <div className='overflow-x-auto'>
       <table className="table table-zebra">

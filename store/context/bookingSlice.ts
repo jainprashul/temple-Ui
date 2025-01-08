@@ -18,8 +18,14 @@ const initialState : InitState = {
   ledger : []
 }
 
-export const fetchBookings = createAsyncThunk('booking/fetchBookings', async () => {
-  const response = await bookingService.list();
+export const fetchBookings = createAsyncThunk('booking/fetchBookings', async ({
+  from,
+  to
+} : {
+  from : string;
+  to : string;
+}) => {
+  const response = await bookingService.listByRange(from, to);
   return response;
 });
 

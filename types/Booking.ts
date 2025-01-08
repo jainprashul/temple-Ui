@@ -6,4 +6,6 @@ export interface Booking {
   status : string;
   devoteeId : number;
   particular : number;
+
+  name ?: string;
 }

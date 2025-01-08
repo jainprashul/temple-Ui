@@ -31,7 +31,7 @@ const DevoteeList = (_: Props) => {
       header: 'नाम',
       accessorKey: 'name',
       cell: ({ row, getValue }) => <button className={'btn btn-link btn-sm'} onClick={() => {
-        navigate(`/devotee/${row.original.id}`)
+        navigate(`/app/devotee/${row.original.id}`)
       }}>{getValue() as any}</button>
     },
     {
@@ -47,7 +47,7 @@ const DevoteeList = (_: Props) => {
       accessorKey: 'id',
       cell: ({ row, getValue }) => (
         <div className="join">
-           <button onClick={() => navigate(`/devotee-edit/${getValue()}`)} title='Edit' className="btn btn-sm btn-circle btn-link"><Edit2/> </button>
+           <button onClick={() => navigate(`/app/devotee-edit/${getValue()}`)} title='Edit' className="btn btn-sm btn-circle btn-link"><Edit2/> </button>
           <button className="btn btn-sm btn-circle btn-link text-red-600" onClick={() => {
             setIndex(row.index as number);
             (document.getElementById('modal') as HTMLDialogElement)?.showModal()
