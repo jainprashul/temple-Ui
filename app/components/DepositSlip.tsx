@@ -1,7 +1,7 @@
 import moment from 'moment'
 import React from 'react'
 import type { Ledger } from 'types/Ledger'
-import { convertAmountIntoWords } from 'utils/print'
+import { convertAmountIntoWords } from "utils/numbers"
 
 type Props = {
   ledger: Ledger & { devotee: { name: string, phone: string } }

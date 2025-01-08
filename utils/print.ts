@@ -1,3 +1,5 @@
+import html2canvas from "html2canvas-pro";
+import jsPDF from "jspdf";
 import { renderToString } from "react-dom/server";
 
 export function printComponent(Component: React.ReactNode) {
@@ -26,36 +28,25 @@ export function printComponent(Component: React.ReactNode) {
 }}
 
 
-export function convertAmountIntoWords(num: number) {
-  const ones: string[] = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
-    "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
-  const tens: string[] = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
-  const thousands: string[] = ["", "Thousand", "Million", "Billion", "Trillion"];
 
-  // Helper function to convert numbers less than 1000
-  function convertHundreds(n: number): string {
-    if (n === 0) return "";
-    if (n < 20) return ones[n];
-    if (n < 100) return tens[Math.floor(n / 10)] + (n % 10 !== 0 ? " " + ones[n % 10] : "");
-    return ones[Math.floor(n / 100)] + " Hundred" + (n % 100 !== 0 ? " " + convertHundreds(n % 100) : "");
+export async function createPDF(element: HTMLDivElement, name = 'document.pdf', download = false) {
+  if (!element) return;
+  const canvas = await html2canvas(element, {
+    scale: 2, // Higher scale for better quality
+  });
+
+  const imgData = canvas.toDataURL('image/png');
+
+  const pdf = new jsPDF('p', 'mm', 'a5');
+
+  const width = pdf.internal.pageSize.getWidth();
+  const height = (canvas.height * width) / canvas.width;
+
+  pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+
+  if(download){
+    pdf.save(name);
+  } else {
+    return pdf.output('blob');
   }
-
-  // Main conversion function
-  if (num === 0) return "Zero";
-
-  let result = "";
-  let idx = 0;
-
-  while (num > 0) {
-    if (num % 1000 !== 0) {
-      result = convertHundreds(num % 1000) + " " + thousands[idx] + " " + result;
-    }
-    num = Math.floor(num / 1000);
-    idx++;
-  }
-
-  return result.trim();
-
 }
-
-convertAmountIntoWords(1300);

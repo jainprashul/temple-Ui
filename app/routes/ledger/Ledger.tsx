@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo } from 'react'
-import type { Route } from '../+types/home';
 import { ArrowLeftCircle, PrinterIcon, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
@@ -9,6 +8,8 @@ import type { ColumnDef } from '@tanstack/react-table';
 import Table from '~/components/Table';
 import DateSelector from '~/components/DateSelectors';
 import { ledgerService } from 'services/ledgerService';
+import type { Route } from './+types/Ledger';
+
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -77,9 +78,11 @@ const LedgerPage = (_: Route.ComponentProps) => {
     {
       header: 'Actions',
       accessorKey: 'id',
-      cell: () =>
+      cell: ({getValue}) =>
         <div className='join'>
-          <button className='btn btn-link join-item btn-circle btn-sm'>
+          <button className='btn btn-link join-item btn-circle btn-sm' onClick={() => {
+            navigate(`/app/deposit-slip/${getValue()}`)
+          }}>
             <PrinterIcon />
           </button>
           <button className="btn btn-sm btn-circle btn-link text-red-600" onClick={() => {
