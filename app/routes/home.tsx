@@ -1,4 +1,4 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/dashboard";
 import Homepage from "./website/Homepage";
 export function meta(_: Route.MetaArgs) {
   return [
@@ -10,7 +10,6 @@ export function meta(_: Route.MetaArgs) {
 function Home() {
   return <>
   <Homepage />
-
   </>
 }
 

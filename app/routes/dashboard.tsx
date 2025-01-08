@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/dashboard";
 import { useNavigate } from "react-router";
 import { BOOKING, DEVOTEE_CREATE, DEVOTEES, LEDGER, PAYMENT } from "~/constants";
 

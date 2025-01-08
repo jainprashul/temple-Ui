@@ -12,12 +12,12 @@ export interface SocialLinksColumnProps {
 
 const socialLinksColumn1: SocialMediaLink[] = [
   { name: "Facebook", url: "#" },
-  { name: "Instagram", url: "#" },
+  { name: "Instagram", url: "https://www.instagram.com/chhindwara_ke_bade_baba125" },
   { name: "Twitter", url: "#" },
 ];
 
 const socialLinksColumn2: SocialMediaLink[] = [
-  { name: "YouTube", url: "#" },
+  { name: "YouTube", url: "http://www.youtube.com/@AadinathdhamChhindwara" },
   { name: "Pinterest", url: "#" },
   { name: "Snapchat", url: "#" },
 ];
@@ -64,6 +64,9 @@ export const NavigationFooter: React.FC = () => {
         <div className="flex w-full bg-zinc-900 min-h-[1px] max-md:max-w-full" />
         <div className="flex flex-wrap gap-10 justify-between items-start mt-8 w-full max-md:max-w-full">
           <div>© {new Date().getFullYear()}, श्री आदिनाथ धाम, छिन्दवाड़ा. All rights reserved.</div>
+          <p>
+          Made with ❤️ by <a target='_blank' rel="noreferrer" href="https://jainprashul.now.sh">Prashul Jain</a>
+        </p>
           <div className="flex gap-6 items-start">
             <div>Privacy Policy</div>
             <div>Terms of Service</div>
@@ -79,7 +82,9 @@ export const SocialLinksColumn: React.FC<SocialLinksColumnProps> = ({ links }) =
   <div className="flex flex-col flex-1 shrink basis-0">
     {links.map((link, index) => (
       <div key={link.name} className={index > 0 ? "mt-3" : ""}>
-        {link.name}
+        <a target="" href={link.url} className="text-zinc-900 hover:underline">
+          {link.name}
+        </a>
       </div>
     ))}
   </div>

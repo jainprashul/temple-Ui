@@ -15,6 +15,7 @@
     "@reduxjs/toolkit": "^2.5.0",
     "@supabase/supabase-js": "^2.47.10",
     "@tanstack/react-table": "^8.20.6",
+    "browser-image-compression": "^2.0.2",
     "daisyui": "^4.12.23",
     "isbot": "^5.1.17",
     "lucide-react": "^0.469.0",

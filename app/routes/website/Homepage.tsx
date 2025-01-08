@@ -1,17 +1,14 @@
-import NavigationHeader from './NavigationHeader'
 import { NavLink } from 'react-router'
 import { MapPinIcon } from 'lucide-react'
-import { NavigationFooter } from './NavigationFooter'
 
 const Homepage = () => {
   return (
     <div id='homepage'>
-      <NavigationHeader />
 
       <section id="hero" className="hero">
         <div className="flex flex-wrap flex-1 shrink gap-12 justify-center items-center w-full basis-0 max-w-[1200px] min-w-[240px] max-md:max-w-full">
           <div className="flex text-center flex-col flex-1 shrink justify-center self-stretch my-auto basis-0 max-w-[720px] min-h-[628px] min-w-[280px] max-md:max-w-full max-sm:min-h-[554px]">
-            <div className="flex flex-col justify-center w-full max-md:max-w-full">
+            <div className="flex flex-col justify-center w-full max-md:max-w-full px-2">
               <h1 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">
                 श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव
               </h1>
@@ -37,16 +34,22 @@ const Homepage = () => {
       </section>
 
       <section id='panchkalyanak' className="bg-zinc-100">
-        <div className="flex flex-col items-center justify-center w-full max-w-[1200px] min-w-[240px] mx-auto py-16">
-          <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">Panchkalyanak</h2>
-          <p className="mt-4 text-2xl leading-8 text-zinc-500 max-md:max-w-full">Panchkalyanak is a set of five auspicious events in the life of a Tirthankara.</p>
+        <div className="flex flex-col items-center justify-center w-full max-w-[1200px] min-w-[240px] mx-auto py-16 px-2">
+          <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">पंचकल्याणक प्रतिष्ठा महामहोत्सव 2025</h2>
+          <h5 className="text-2xl font-black tracking-tight leading-8 text-zinc-900 max-md:max-w-full">आदिनाथ धाम मंदिर, छिंदवाड़ा</h5>
+          <br />
+          <h6 className='text-2xl font-black tracking-tight leading-8 text-zinc-900 max-md:max-w-full'>15 जनवरी से 20 जनवरी 2025</h6>
+          
+          <p className="mt-4 text-2xl leading-8 text-zinc-500 max-md:max-w-full">
+            श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव 2025 के अवसर पर आप सभी का हार्दिक स्वागत है। इस अवसर पर आप सभी को आदिनाथ धाम मंदिर में आमंत्रित किया जाता है। 
+          </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <NavLink to='/panchkalyank' className="btn !bg-yellow-400">Explore Panchkalyanak</NavLink>
           </div>
         </div>  
       </section>
 
-      <section id='location' className="max-w-[1200px] mx-auto py-16">
+      <section id='location' className="max-w-[900px] mx-auto py-16">
         <div className='grid grid-cols-1 md:grid-cols-2 mx-auto'>
         <div className="overflow-hidden resize-none max-w-full aspect-square">
           <div id="canvas-for-googlemap" className="h-full w-full max-w-full">
@@ -112,9 +115,6 @@ const Homepage = () => {
 
         </div>
       </section>
-
-      <NavigationFooter />
-
     </div>
   )
 }

@@ -5,6 +5,12 @@ export const VITE_SUPABASE_ANON_KEY = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJp
 export const APP_TITLE = `श्री आदिनाथ धाम, छिन्दवाड़ा`  
 
 
+export const PANCHKALYANK = `/panchkalyank`
+export const VIDEOS = `/videos`
+export const NEWSLETTER = `/newsletter`
+export const GALLERY = `/gallery`
+
+
 export const HOME = `/app/`
 export const LOGIN = `/app/login`
 export const REGISTER = `/app/register`
