@@ -1,9 +1,12 @@
 import { type RouteConfig, index, layout, route } from "@react-router/dev/routes";
-import { BOOKING, DEPOSIT_SLIP, DEVOTEE_CREATE, DEVOTEE_EDIT, DEVOTEE_VIEW, DEVOTEES, LEDGER, LOGIN, PAYMENT, PROFILE, REGISTER } from "./constants";
+import { BOOKING, DEPOSIT_SLIP, DEVOTEE_CREATE, DEVOTEE_EDIT, DEVOTEE_VIEW, DEVOTEES, HOME, LEDGER, LOGIN, PAYMENT, PROFILE, REGISTER } from "./constants";
 
 export default [
+  index("routes/home.tsx"),
+
+  
   layout("components/Layout.tsx", [
-    index("routes/home.tsx"),
+    route(HOME, "routes/dashboard.tsx"),
     route(PAYMENT, "routes/payment.tsx"),
     route(DEVOTEES, "routes/devotee/devoteeList.tsx"),
     route(DEVOTEE_CREATE, "routes/devotee/Create.tsx"),

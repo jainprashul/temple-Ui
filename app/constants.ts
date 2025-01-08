@@ -5,17 +5,16 @@ export const VITE_SUPABASE_ANON_KEY = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJp
 export const APP_TITLE = `श्री आदिनाथ धाम, छिन्दवाड़ा`  
 
 
-export const HOME = `/`
-export const LOGIN = `/login`
-export const REGISTER = `/register`
-export const PROFILE = `/profile`
-export const PAYMENT = `/payment`
-export const DEVOTEES = `/devotees`
-export const DEVOTEE_CREATE = `/devotee-new`
-export const DEVOTEE_EDIT = `/devotee-edit/:id`
-export const DEVOTEE_VIEW = `/devotee/:id`
-export const DEPOSIT_SLIP = `/deposit-slip/:id`
-export const BOOKING = `/booking`
-export const LEDGER = `/ledger`
-
+export const HOME = `/app/`
+export const LOGIN = `/app/login`
+export const REGISTER = `/app/register`
+export const PROFILE = `/app/profile`
+export const PAYMENT = `/app/payment`
+export const DEVOTEES = `/app/devotees`
+export const DEVOTEE_CREATE = `/app/devotee-new`
+export const DEVOTEE_EDIT = `/app/devotee-edit/:id`
+export const DEVOTEE_VIEW = `/app/devotee/:id`
+export const DEPOSIT_SLIP = `/app/deposit-slip/:id`
+export const BOOKING = `/app/booking`
+export const LEDGER = `/app/ledger`
 
