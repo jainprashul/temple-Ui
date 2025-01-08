@@ -33,8 +33,10 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section id='panchkalyanak' className="bg-zinc-100">
+      <section id='panchkalyanak' className="bg-[#fffce4]">
+        <img src="/images/adinath-wide.png" alt="Panchkalyank" className="mx-auto w-[90%] py-4" />
         <div className="flex flex-col items-center justify-center w-full max-w-[1200px] min-w-[240px] mx-auto py-16 px-2">
+
           <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">पंचकल्याणक प्रतिष्ठा महामहोत्सव 2025</h2>
           <h5 className="text-2xl font-black tracking-tight leading-8 text-zinc-900 max-md:max-w-full">आदिनाथ धाम मंदिर, छिंदवाड़ा</h5>
           <br />

@@ -13,18 +13,15 @@ export interface SocialLinksColumnProps {
 const socialLinksColumn1: SocialMediaLink[] = [
   { name: "Facebook", url: "#" },
   { name: "Instagram", url: "https://www.instagram.com/chhindwara_ke_bade_baba125" },
-  { name: "Twitter", url: "#" },
+  { name: "YouTube", url: "http://www.youtube.com/@AadinathdhamChhindwara" },
 ];
 
 const socialLinksColumn2: SocialMediaLink[] = [
-  { name: "YouTube", url: "http://www.youtube.com/@AadinathdhamChhindwara" },
-  { name: "Pinterest", url: "#" },
-  { name: "Snapchat", url: "#" },
 ];
 
 export const NavigationFooter: React.FC = () => {
   return (
-    <div className="flex overflow-hidden flex-col px-16 py-20 w-full bg-gray-200 max-md:px-5 max-md:max-w-full">
+    <div className="flex overflow-hidden flex-col px-16 py-20 w-full bg-[#fffce4] max-md:px-5 max-md:max-w-full">
       <div className="flex flex-wrap gap-10 items-start w-full max-md:max-w-full">
         <div className="flex overflow-hidden flex-col min-w-[240px] w-[864px] max-md:max-w-full">
           <div className="text-lg text-zinc-900 max-md:max-w-full">
@@ -56,8 +53,8 @@ export const NavigationFooter: React.FC = () => {
           </div>
         </div>
         <div className="flex overflow-hidden flex-1 shrink gap-6 items-start text-sm leading-relaxed whitespace-nowrap basis-0 text-zinc-900">
-          <SocialLinksColumn links={socialLinksColumn1} />
           <SocialLinksColumn links={socialLinksColumn2} />
+          <SocialLinksColumn links={socialLinksColumn1} />
         </div>
       </div>
       <div className="flex flex-col mt-20 w-full text-sm leading-relaxed text-zinc-900 max-md:mt-10 max-md:max-w-full">
