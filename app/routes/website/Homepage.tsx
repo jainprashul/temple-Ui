@@ -44,13 +44,16 @@ const Homepage = () => {
 
             <div className="carousel w-full" id="carousel">
 
-              {
-                slides.map((slide, index) => (
-                  <div key={index} id={`slide${index}`} className={`carousel-item w-full ${index === currentIndex ? 'active' : ''}`}>
-                    <img src={slide} alt={`Slide ${index}`} className="w-full" />
-                  </div>
-                ))
-              }
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`carousel-item w-full  
+                     ${index === currentIndex ? "block" : "hidden"
+                    }`}
+                >
+                  <img src={slide} alt={`Slide ${index + 1}`} className="w-full h-full object-contain" />
+                </div>
+              ))}
             </div>
 
           </div>
