@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {}
 
-const PanchkalyankPatra = (props: Props) => {
+const PanchkalyankPatra = (_props: Props) => {
   return (
     <div >
       <section className="container mx-auto p-4">
