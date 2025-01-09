@@ -36,80 +36,84 @@ const Reports = (_: Props) => {
         <div role="tablist" className="tabs tabs-bordered">
           <a role="tab" className={`tab ${activeTab === 'daywise' ? "tab-active" : ''} `} onClick={() => { setActiveTab('daywise'); }}
           >Day Wise</a>
-          <a role="tab" className={`tab ${activeTab === 'monthwise' ? "tab-active" : ''} `} onClick={() => { setActiveTab('monthwise');  }}
+          <a role="tab" className={`tab ${activeTab === 'monthwise' ? "tab-active" : ''} `} onClick={() => { setActiveTab('monthwise'); }}
           >Month Wise</a>
         </div>
       </div>
 
 
-      {activeTab === 'daywise' && <div >
+      {activeTab === 'daywise' && <div>
         <div className="mt-4 flex ">
-          <input className="input input-bordered w-full max-w-xs"  type='month' value={`${year}-${month.toString().padStart(2, '0')}`} onChange={(e) => { const [y, m] = e.target.value.split('-'); setYear(parseInt(y)); setMonth(parseInt(m)); }} />
+          <input className="input input-bordered w-full max-w-xs" type='month' value={`${year}-${month.toString().padStart(2, '0')}`} onChange={(e) => { const [y, m] = e.target.value.split('-'); setYear(parseInt(y)); setMonth(parseInt(m)); }} />
         </div>
 
-        <table className="table w-full mt-4">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Deposit Amount</th>
-              <th>Deposit Count</th>
-              <th>Booking Amount</th>
-              <th>Booking Count</th>
-              <th>Expense Amount</th>
-              <th>Expense Count</th>
-            </tr>
-          </thead>
-          <tbody>
-            {report && report.map((item, index) => (
-              <tr key={index}>
-                {'report_date' in item && <td>{item.report_date}</td>}
-                <td>{formatCurrency(item.ledger_total_amount)}</td>
-                <td>{item.ledger_entry_count}</td>
-                <td>{formatCurrency(item.bookings_total_amount)}</td>
-                <td>{item.bookings_entry_count}</td>
-                <td>{formatCurrency(item.expenses_total_amount)}</td>
-                <td>{item.expenses_entry_count}</td>
+        <div className="overflow-x-auto">
+
+          <table className="table w-full mt-4">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Deposit Amount</th>
+                <th>Deposit Count</th>
+                <th>Booking Amount</th>
+                <th>Booking Count</th>
+                <th>Expense Amount</th>
+                <th>Expense Count</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {report && report.map((item, index) => (
+                <tr key={index}>
+                  {'report_date' in item && <td>{item.report_date}</td>}
+                  <td>{formatCurrency(item.ledger_total_amount)}</td>
+                  <td>{item.ledger_entry_count}</td>
+                  <td>{formatCurrency(item.bookings_total_amount)}</td>
+                  <td>{item.bookings_entry_count}</td>
+                  <td>{formatCurrency(item.expenses_total_amount)}</td>
+                  <td>{item.expenses_entry_count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>}
 
 
       {activeTab === 'monthwise' && <div>
         <div className="mt-4 flex ">
-          
+
           <select className="select select-bordered w-full max-w-xs" value={year} onChange={(e) => { setYear(parseInt(e.target.value)); }}>
             {Array.from({ length: 10 }, (_, i) => <option key={i} value={moment().year() - i}>{moment().year() - i}</option>)}
           </select>
         </div>
-
-        <table className="table w-full mt-4">
-          <thead>
-            <tr>
-              <th>Month</th>
-              <th>Deposit Amount</th>
-              <th>Deposit Count</th>
-              <th>Booking Amount</th>
-              <th>Booking Count</th>
-              <th>Expense Amount</th>
-              <th>Expense Count</th>
-            </tr>
-          </thead>
-          <tbody>
-            {report && report.map((item, index) => (
-              <tr key={index}>
-                {'month' in item && <td>{moment().month(item.month - 1).format('MMM, YYYY')}</td>}
-                <td>{formatCurrency(item.ledger_total_amount)}</td>
-                <td>{item.ledger_entry_count}</td>
-                <td>{formatCurrency(item.bookings_total_amount)}</td>
-                <td>{item.bookings_entry_count}</td>
-                <td>{formatCurrency(item.expenses_total_amount)}</td>
-                <td>{item.expenses_entry_count}</td>
+        <div className="overflow-x-auto">
+          <table className="table w-full mt-4">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Deposit Amount</th>
+                <th>Deposit Count</th>
+                <th>Booking Amount</th>
+                <th>Booking Count</th>
+                <th>Expense Amount</th>
+                <th>Expense Count</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {report && report.map((item, index) => (
+                <tr key={index}>
+                  {'month' in item && <td>{moment().month(item.month - 1).format('MMM, YYYY')}</td>}
+                  <td>{formatCurrency(item.ledger_total_amount)}</td>
+                  <td>{item.ledger_entry_count}</td>
+                  <td>{formatCurrency(item.bookings_total_amount)}</td>
+                  <td>{item.bookings_entry_count}</td>
+                  <td>{formatCurrency(item.expenses_total_amount)}</td>
+                  <td>{item.expenses_entry_count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>}
 
 
