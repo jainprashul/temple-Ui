@@ -25,12 +25,14 @@ export const expenseService = {
     },
 
     create: async (data : Expense) => {
-        const { error } = await supabase
+        const {data : _data, error } = await supabase
             .from('expenses')
-            .insert(data);
+            .insert(data)
+            .select('id')
         if (error) {
             throw new Error(error.message);
         }
+        return _data![0].id;
     },
     update: async (id : string, data : Partial<Expense>) => {
         const { error } = await supabase

@@ -32,7 +32,7 @@ export function printComponent(Component: React.ReactNode) {
 export async function createPDF(element: HTMLDivElement, name = 'document.pdf', download = false) {
   if (!element) return;
   const canvas = await html2canvas(element, {
-    scale: 2, // Higher scale for better quality
+    scale: 1, // Higher scale for better quality
   });
 
   const imgData = canvas.toDataURL('image/png');
@@ -47,6 +47,7 @@ export async function createPDF(element: HTMLDivElement, name = 'document.pdf', 
   if(download){
     pdf.save(name);
   } else {
-    return pdf.output('blob');
+    const blob = pdf.output('blob');
+    return new File([blob], name, { type: blob.type });
   }
 }

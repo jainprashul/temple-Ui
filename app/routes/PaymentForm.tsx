@@ -41,9 +41,11 @@ const PaymentForm = (_: Route.ComponentProps) => {
 
     console.log(data);
 
-    await expenseService.create(data);
+    const id = await expenseService.create(data);
 
-    printComponent(<PaymentVoucher data={data} />);
+    navigate(`/app/payment-slip/${id}`);
+
+    
 
     toast.success('Amount deposited successfully for ' + data.to);
   }

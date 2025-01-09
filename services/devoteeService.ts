@@ -50,11 +50,13 @@ export const devoteeService = {
     },
 
     deposit: async (data : Ledger) => {
-        const { error } = await supabase
+        const { data : _data, error } = await supabase
             .from('ledger')
-            .insert(data);
+            .insert(data)
+            .select('id');
         if (error) {
             throw new Error(error.message);
         }
+        return _data[0].id as string;
     }
 };

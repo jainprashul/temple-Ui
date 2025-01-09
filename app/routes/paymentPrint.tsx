@@ -40,11 +40,13 @@ const LedgerPrint = ({ loaderData }: Route.ComponentProps) => {
     <div>
       <PaymentVoucher data={loaderData} ref={ref} />
       <div className="flex justify-center gap-1 mt-4">
+        {/* show btn in lg screen */}
         <button onClick={handlePrint} className="btn print:hidden btn-primary">Print</button>
         <button onClick={async () => {
           const name = `Adinath Dham Payment ${loaderData.to} - ${loaderData.date} - ${loaderData.id}.pdf`;
           const blob = await createPDF(ref.current!, name);
-          share(blob);
+
+          share(blob!);
         }} className="btn print:hidden btn-primary">Share</button>
         <button onClick={() => {
           if (!ref.current) return;

@@ -139,7 +139,9 @@ const BookingCreate = (_: Route.ComponentProps) => {
               </select>
             </label>
 
-            <button type="submit" formAction={formAction} className="btn btn-primary">Deposit</button>
+            <button type="submit" formAction={formAction} className="btn btn-primary">
+              Book Now
+            </button>
           </>
 
 

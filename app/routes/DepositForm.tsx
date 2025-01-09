@@ -66,14 +66,11 @@ const DepositForm = (_: Route.ComponentProps) => {
       type: 'credit'
     }
 
-    await devoteeService.deposit(data);
+    const id = await devoteeService.deposit(data);
 
-    const printData = {
-      ...data,
-      devotee: selectedDevotee
-    }
+    
+    navigate('/app/deposit-slip/' + id);
 
-    printComponent(<DepositSlip ledger={printData} />);
     toast.success('Amount deposited successfully for ' + selectedDevotee.name);
   }
 
