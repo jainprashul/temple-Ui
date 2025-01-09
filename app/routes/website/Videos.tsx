@@ -48,7 +48,7 @@ type VideoCardProps = {
 function VideoCard({ data }: VideoCardProps) {
   return (
     <div className="bg-gray-100 p-4 rounded-lg">
-      <iframe width="100%" height="315" src={`https://www.youtube.com/embed/${data.id}`} title={data.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <iframe loading='lazy' width="100%" height="315" src={`https://www.youtube.com/embed/${data.id}`} title={data.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       <h3 className='text-lg'>{data.title}</h3>
     </div>
   )

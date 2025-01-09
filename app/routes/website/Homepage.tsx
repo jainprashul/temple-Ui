@@ -55,10 +55,7 @@ const Homepage = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 mx-auto'>
         <div className="overflow-hidden resize-none max-w-full aspect-square">
           <div id="canvas-for-googlemap" className="h-full w-full max-w-full">
-            <iframe
-              className="h-full w-full border-0"
-              src="https://www.google.com/maps/embed/v1/place?q=jain+mandir&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-            ></iframe>
+           <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3697.859293899782!2d78.9358342!3d22.0549773!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd5661d304af699%3A0x390c5ff03bd34e09!2sJain%20Mandir!5e0!3m2!1sen!2sin!4v1736398114486!5m2!1sen!2sin" className="h-full w-full border-0" allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <style>
             {`
@@ -75,7 +72,7 @@ const Homepage = () => {
           <MapPinIcon size={64} className="" />
           <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">मंदिर जी </h2>
           <p className="mt-4 text-2xl leading-8  max-md:max-w-full">
-            श्री पाषाण जिनालय मंदिर जी का स्थान गोलगंज, छिंदवाड़ा, शहर के मध्य में स्थित है। यहाँ आने के लिए आप नागपूर , जबलपुर और इंदौर से बस सेवा उपलब्ध है। 
+            श्री आदिनाथ धाम मंदिर जी का स्थान गोलगंज, छिंदवाड़ा, शहर के मध्य में स्थित है। यहाँ आने के लिए आप नागपूर , जबलपुर और इंदौर से बस सेवा उपलब्ध है। 
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a target='_blank' href='https://maps.app.goo.gl/3r3yvY5JdeRAb1zV6' className="btn !bg-yellow-400" rel="noreferrer">Explore Location</a>
@@ -83,8 +80,8 @@ const Homepage = () => {
         </div>
         <div className="flex flex-col justify-center items-center p-4 bg-yellow-400">
           <MapPinIcon size={64} className="mb-2" />
-          <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">
-            अयोध्या नगरी , 
+          <h2 className="text-4xl font-black text-center tracking-tight leading-10 text-zinc-900 max-md:max-w-full">
+            अयोध्या नगरी, जैल बागीचा 
             छिंदवाड़ा
           </h2>
           <p className="mt-4 text-2xl leading-8 text-center max-md:max-w-full">
@@ -98,7 +95,7 @@ const Homepage = () => {
         </div> 
         <div className="overflow-hidden resize-none max-w-full aspect-square">
           <div id="canvas-for-googlemap" className="h-full w-full max-w-full">
-            <iframe
+            <iframe loading='lazy'
               className="h-full w-full border-0"
               src="https://www.google.com/maps/embed/v1/place?q=jail+bagicha&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
             ></iframe>

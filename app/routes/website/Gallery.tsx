@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Route } from './+types/Gallery';
-import { imageUploadService } from 'services/imageUploadService';
+import { fetchGoogleDriveImages, type GoogleDriveImage } from 'services/googleDriveService';
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -11,7 +11,7 @@ export function meta(_: Route.MetaArgs) {
 
 export async function clientLoader(_: Route.ClientLoaderArgs) {
 
-  const product = await imageUploadService.list();
+  const product = await fetchGoogleDriveImages('AIzaSyBnQLHNP9JSOvjjg2BvKhld2LA_o6EhfhI', '1LuTX-uqdCS3nGMJrq5x6JDE9HLJRhBdS');
   return product;
 }
 
@@ -39,16 +39,15 @@ const Gallery = ({ loaderData }: Route.ComponentProps) => {
 export default Gallery
 
 type ImageCardProps = {
-  data: any
+  data: GoogleDriveImage
 }
 
 function ImageCard({ data }: ImageCardProps) {
-  const url = `https://gkqujdsynxplbgsulaxn.supabase.co/storage/v1/object/public/${data.url}`
+  // const url = `https://gkqujdsynxplbgsulaxn.supabase.co/storage/v1/object/public/${data.url}`
   return (
     <div className="bg-gray-100 p-4 rounded-lg ">
-      <img className='w-full object-contain h-96'
-      src={url} alt={data.title} onClick={() => window.open(url, '_blank')} />
-      <h3 className='text-lg'>{data.title}</h3>
+      <iframe loading='lazy' src={data.url} className="w-full h-96" />
+      <h3 className='text-lg'>{data.name}</h3>
     </div>
   )
 }
