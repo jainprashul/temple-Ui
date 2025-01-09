@@ -6,8 +6,8 @@ const Homepage = () => {
     <div id='homepage'>
 
       <section id="hero" className="hero" >
-        <div className="flex flex-1 shrink gap-12  w-full basis-0 max-w-[1200px]  max-md:max-w-full ">
-          <div className="flex text-center flex-col flex-1  justify-center  my-auto basis-0 max-w-[720px] min-h-[628px] min-w-[280px] max-md:max-w-full max-sm:min-h-[554px]">
+        <div className="flex flex-1 shrink gap-12  w-full basis-0 max-w-[1200px]  flex-wrap  max-md:max-w-full ">
+          <div className="flex text-center flex-col flex-1  justify-center my-auto basis-0 max-w-[720px] min-h-[628px] min-w-[280px] max-md:max-w-full max-sm:min-h-[554px]">
             <div className="flex flex-col justify-center w-full max-md:max-w-full px-2">
               <h1 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">
                 श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव
@@ -20,17 +20,23 @@ const Homepage = () => {
             <div className="flex flex-col gap-4 mt-8">
               <NavLink to='/panchkalyank' className="btn !bg-yellow-400">Explore Panchkalyanak</NavLink>
             </div>
-
           </div>
           <div className="flex overflow-hidden flex-1 shrink gap-2 justify-center items-center self-stretch my-auto bg-white basis-0 h-[704px] min-w-[280px] rounded-[32px] max-md:max-w-full max-sm:h-[509px]">
-            
-         
-            <img
-              loading="lazy"
-              src={"/images/car1.png"}
-              alt={"Adinath Temple Illustration"}
-              className="object-contain self-stretch my-auto aspect-[0.93] min-w-[240px] w-[656px]"
-            />
+
+            <div className="carousel w-full" id="carousel">
+              <div id="slide1" className="carousel-item w-full">
+                <img src="/images/car1.jpg" alt="Slide 1" className="w-full" />
+              </div>
+
+              <div id="slide2" className="carousel-item w-full">
+                <img src="/images/car2.jpg" alt="Slide 2" className="w-full" />
+              </div>
+
+              <div id="slide3" className="carousel-item w-full">
+                <img src="/images/car3.jpg" alt="Slide 3" className="w-full" />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
