@@ -39,7 +39,7 @@ const LedgerPage = (_: Route.ComponentProps) => {
     <div>
       <div className="flex gap-1 items-center">
         <button onClick={() => navigate(-1)} className="btn btn-circle btn-link"> <ArrowLeftCircle /> </button>
-        <h1 className='text-2xl font-semibold'>Ledger</h1>
+        <h1 className='text-2xl font-semibold'>Donation Ledger</h1>
       </div>
 
       <hr className='py-2' />

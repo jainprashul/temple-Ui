@@ -8,10 +8,10 @@ import { ArrowLeftCircle } from "lucide-react";
 import moment from "moment";
 import type { Devotee } from "types/Devotee";
 import { toast } from "sonner";
-import type { Route } from "./+types/booking";
 import { fetchParticulars } from "store/context/bookingSlice";
 import type { Booking } from "types/Booking";
 import { bookingService } from "services/bookingService";
+import type { Route } from "../website/+types/Homepage";
 
 
 export function meta(_: Route.MetaArgs) {
@@ -21,7 +21,7 @@ export function meta(_: Route.MetaArgs) {
   ];
 }
 
-const Bookings = (_: Route.ComponentProps) => {
+const BookingCreate = (_: Route.ComponentProps) => {
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
   const devoteeId = searchParams.get('devoteeId');
@@ -150,4 +150,4 @@ const Bookings = (_: Route.ComponentProps) => {
   )
 }
 
-export default Bookings
+export default BookingCreate

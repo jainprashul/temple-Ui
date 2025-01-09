@@ -8,7 +8,7 @@ import { fetchDevotees } from 'store/context/devoteeSlice';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import type { Devotee } from 'types/Devotee';
 import Table from '~/components/Table'
-import { DEVOTEE_CREATE, PAYMENT } from '~/constants'
+import { DEPOSIT, DEVOTEE_CREATE } from '~/constants'
 
 
 type Props = {}
@@ -54,7 +54,7 @@ const DevoteeList = (_: Props) => {
           }}>
             <Trash2Icon />
           </button>
-          <button onClick={() => navigate(`${PAYMENT}?devoteeId=${getValue()}`)} title='Ledger' className="btn btn-sm btn-circle btn-link"><HandCoins/> </button>
+          <button onClick={() => navigate(`${DEPOSIT}?devoteeId=${getValue()}`)} title='Ledger' className="btn btn-sm btn-circle btn-link"><HandCoins/> </button>
           
         </div>
       )

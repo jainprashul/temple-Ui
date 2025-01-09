@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/dashboard";
 import { useNavigate } from "react-router";
-import { BOOKING_CREATE, BOOKING_LIST, DEVOTEE_CREATE, DEVOTEES, LEDGER, PAYMENT } from "~/constants";
+import { BOOKING_CREATE, BOOKING_LIST, DEPOSIT, DEVOTEE_CREATE, DEVOTEES, LEDGER, PAYMENT } from "~/constants";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -21,6 +21,11 @@ function Dashboard() {
     },
     {
       title: "Quick Deposit", description: "दान करें", action: () => {
+        navigate(DEPOSIT);
+      }
+    },
+    {
+      title: "Create Payment Voucher", description: "भुगतान वाउचर", action: () => {
         navigate(PAYMENT);
       }
     },

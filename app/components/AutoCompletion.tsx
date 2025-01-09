@@ -76,7 +76,7 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ title = "Search", defaultVa
           {filteredSuggestions.map((suggestion, index) => (
             <li
               key={index}
-              className="p-1 hover:bg-primary/10 cursor-pointer"
+              className="px-2 py-2 hover:bg-primary/10 cursor-pointer"
               onClick={() => {
                 const index = suggestions.indexOf(suggestion);
                 handleSuggestionSelect(suggestion, index);

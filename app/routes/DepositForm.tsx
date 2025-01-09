@@ -1,10 +1,10 @@
 import Autocomplete from "~/components/AutoCompletion";
-import type { Route } from "./+types/payment";
+import type { Route } from "./+types/DepositForm";
 import { useAppDispatch, useAppSelector } from "store/hooks";
 import { useActionState, useEffect, useState } from "react";
 import { fetchDevotees } from "store/context/devoteeSlice";
 import { useLocation, useNavigate } from "react-router";
-import { ArrowLeftCircle } from "lucide-react";
+import { ArrowLeftCircle, PlusCircle } from "lucide-react";
 import moment from "moment";
 import type { Devotee } from "types/Devotee";
 import type { Ledger } from "types/Ledger";
@@ -20,7 +20,7 @@ export function meta(_: Route.MetaArgs) {
   ];
 }
 
-const Payment = (_: Route.ComponentProps) => {
+const DepositForm = (_: Route.ComponentProps) => {
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
   const devoteeId = searchParams.get('devoteeId');
@@ -95,8 +95,10 @@ const Payment = (_: Route.ComponentProps) => {
                 </div>
                 <input type="text" value={selectedDevotee?.name} readOnly className="input input-bordered" />
               </label>
-            </> :
+            </> :<div className="flex gap-2 items-end">
               <Autocomplete defaultValue={selectedDevotee?.name} onValueChange={onNameChange} name="name" title="Name" placeholder="Search Devotee Names" suggestions={suggestions} />
+              <button type="button" onClick={() => navigate('/app/devotee-new')} className="btn btn-sm btn-link btn-circle btn-primary mb-2 "><PlusCircle/></button>
+              </div>
             }
             <label className="form-control">
               <div className="label">
@@ -140,4 +142,4 @@ const Payment = (_: Route.ComponentProps) => {
   )
 }
 
-export default Payment
+export default DepositForm
