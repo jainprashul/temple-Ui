@@ -1,7 +1,26 @@
 import { NavLink } from 'react-router'
 import { MapPinIcon } from 'lucide-react'
+import { useEffect, useState } from 'react';
 
 const Homepage = () => {
+
+  const slides = [
+    '/images/car1.jpg',
+    '/images/car2.jpg',
+    '/images/car3.jpg',
+  ]
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-play effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [slides.length]);
+
   return (
     <div id='homepage'>
 
@@ -24,17 +43,14 @@ const Homepage = () => {
           <div className="flex overflow-hidden flex-1 shrink gap-2 justify-center items-center self-stretch my-auto bg-white basis-0 h-[704px] min-w-[280px] rounded-[32px] max-md:max-w-full max-sm:h-[509px]">
 
             <div className="carousel w-full" id="carousel">
-              <div id="slide1" className="carousel-item w-full">
-                <img src="/images/car1.jpg" alt="Slide 1" className="w-full" />
-              </div>
 
-              <div id="slide2" className="carousel-item w-full">
-                <img src="/images/car2.jpg" alt="Slide 2" className="w-full" />
-              </div>
-
-              <div id="slide3" className="carousel-item w-full">
-                <img src="/images/car3.jpg" alt="Slide 3" className="w-full" />
-              </div>
+              {
+                slides.map((slide, index) => (
+                  <div key={index} id={`slide${index}`} className={`carousel-item w-full ${index === currentIndex ? 'active' : ''}`}>
+                    <img src={slide} alt={`Slide ${index}`} className="w-full" />
+                  </div>
+                ))
+              }
             </div>
 
           </div>
