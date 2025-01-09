@@ -6,6 +6,9 @@ export default [
   layout("routes/website/WebsiteLayout.tsx", [
     index("routes/website/Homepage.tsx"),
     route(PANCHKALYANK, "routes/website/Panchkalyank.tsx"),
+    route("/panchkalyank-patra", "routes/website/PanchkalyankPatra.tsx"),
+    route("/panchkalyank-about", "routes/website/PanchkalyankAbout.tsx"),
+    route("/panchkalyank-schedule", "routes/website/PanchkalyankSchedule.tsx"),
     route(VIDEOS, "routes/website/Videos.tsx"),
     route(NEWSLETTER, "routes/website/Newsletter.tsx"),
     route(GALLERY, "routes/website/Gallery.tsx"),

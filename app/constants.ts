@@ -6,6 +6,9 @@ export const APP_TITLE = `श्री आदिनाथ धाम, छिन�
 
 
 export const PANCHKALYANK = `/panchkalyank`
+export const PANCHKALYANK_PATRA = `/panchkalyank-patra`
+export const PANCHKALYANK_ABOUT = `/panchkalyank-about`
+export const PANCHKALYANK_SCHEDULE = `/panchkalyank-schedule`
 export const VIDEOS = `/videos`
 export const NEWSLETTER = `/newsletter`
 export const GALLERY = `/gallery`

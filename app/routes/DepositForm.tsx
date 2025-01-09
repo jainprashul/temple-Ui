@@ -10,8 +10,7 @@ import type { Devotee } from "types/Devotee";
 import type { Ledger } from "types/Ledger";
 import { devoteeService } from "services/devoteeService";
 import { toast } from "sonner";
-import { printComponent } from "utils/print";
-import DepositSlip from "~/components/DepositSlip";
+
 
 export function meta(_: Route.MetaArgs) {
   return [

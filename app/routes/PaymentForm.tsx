@@ -6,10 +6,8 @@ import { useNavigate } from "react-router";
 import { ArrowLeftCircle } from "lucide-react";
 import moment from "moment";
 import { toast } from "sonner";
-import { printComponent } from "utils/print";
 import type { Expense } from "types/Expense";
 import { expenseService } from "services/expenseService";
-import PaymentVoucher from "~/components/PaymentVoucher";
 
 export function meta(_: Route.MetaArgs) {
   return [

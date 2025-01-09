@@ -114,6 +114,9 @@ const Homepage = () => {
 
         </div>
       </section>
+
+      <img src="/images/panchyakalvynak.jpg" alt="Panchkalyank" className="mx-auto w-full" />
+
     </div>
   )
 }
