@@ -7,6 +7,7 @@ import React from 'react';
 import type { Ledger } from 'types/Ledger';
 import LedgerTable from '../ledger/LedgerTable';
 import type { Booking } from 'types/Booking';
+import { formatCurrency } from 'utils/numbers';
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -60,10 +61,7 @@ const DevoteeView = ({ loaderData }: Route.ComponentProps) => {
 
             <div>
               <div className="text-sm text-gray-500">Pending Amount</div>
-              <div className="text-lg">{new Intl.NumberFormat('en-IN', {
-                style: 'currency',
-                currency: 'INR'
-              }).format(pendingAmount)}</div>
+              <div className="text-lg">{formatCurrency(pendingAmount)}</div>
             </div>
           </div>
         </div>

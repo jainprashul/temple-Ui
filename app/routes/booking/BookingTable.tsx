@@ -4,6 +4,7 @@ import type { Booking } from 'types/Booking';
 import type { ColumnDef } from '@tanstack/react-table';
 import Table from '~/components/Table';
 import { Trash2 } from 'lucide-react';
+import { formatCurrency } from 'utils/numbers';
 
 
 type Props = {
@@ -42,12 +43,7 @@ const BookingTable = ({ setSelected, data, children, hideActions = false}: Props
     {
       header: 'Amount',
       accessorKey: 'amount',
-      cell: ({ getValue }) => <span>{
-        new Intl.NumberFormat('en-IN', {
-          style: 'currency',
-          currency: 'INR'
-        }).format(getValue() as any)
-      }</span>
+      cell: ({ getValue }) => <span>{ formatCurrency(getValue() as any) }</span>
     },
     {
       header: 'Description',

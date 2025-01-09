@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 import { fetchParticulars } from 'store/context/bookingSlice';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import type { Particulars } from 'types/Particulars';
+import { formatCurrency } from 'utils/numbers';
 import Table from '~/components/Table'
 import {  PARTICULARS_CREATE } from '~/constants'
 
@@ -37,12 +38,7 @@ const ParticularList = (_: Props) => {
     {
       header: 'Charge',
       accessorKey: 'amount',
-      cell: ({ getValue }) => <span>{
-        new Intl.NumberFormat('en-IN', {
-          style: 'currency',
-          currency: 'INR'
-        }).format(getValue() as any)
-      }</span>
+      cell: ({ getValue }) => <span>{formatCurrency(getValue() as any)}</span>
     },
     {
       header: "Actions",

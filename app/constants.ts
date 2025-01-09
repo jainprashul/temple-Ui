@@ -29,4 +29,5 @@ export const LEDGER = `/app/ledger`
 export const EXPENSE_LIST = `/app/expense`
 export const PARTICULARS = `/app/particulars`
 export const PARTICULARS_CREATE = `/app/particulars/new`
+export const REPORT = `/app/reports`
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/dashboard";
 import { useNavigate } from "react-router";
-import { BOOKING_CREATE, BOOKING_LIST, DEPOSIT, DEVOTEE_CREATE, DEVOTEES, EXPENSE_LIST, LEDGER, PARTICULARS, PAYMENT } from "~/constants";
+import { BOOKING_CREATE, BOOKING_LIST, DEPOSIT, DEVOTEE_CREATE, DEVOTEES, EXPENSE_LIST, LEDGER, PARTICULARS, PAYMENT, REPORT } from "~/constants";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -13,7 +13,18 @@ export function meta(_: Route.MetaArgs) {
 function Dashboard() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+
+    
+
+  }, []);
+
   const quickLinks = [
+    {
+      title : "Reports" , description : "Reports" , action : () => {
+        navigate(REPORT);
+      }
+    },
     {
       title: "दानदाता", description: "दानदाता सूची", action: () => {
         navigate(DEVOTEES);

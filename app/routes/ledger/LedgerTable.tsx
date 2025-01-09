@@ -5,6 +5,7 @@ import type { Ledger } from 'types/Ledger';
 import type { ColumnDef } from '@tanstack/react-table';
 import Table from '~/components/Table';
 import DateSelector from '~/components/DateSelectors';
+import { formatCurrency } from 'utils/numbers';
 
 type Props = {
   children?: React.ReactNode
@@ -36,12 +37,7 @@ const LedgerTable = ({ data, setSelected }: Props) => {
       {
         header: 'Amount',
         accessorKey: 'amount',
-        cell: ({ getValue }) => <span>{
-          new Intl.NumberFormat('en-IN', {
-            style: 'currency',
-            currency: 'INR'
-          }).format(getValue() as any)
-        }</span>
+        cell: ({ getValue }) => <span>{formatCurrency(getValue() as any)}</span>
       },
       {
         header: 'Type',
