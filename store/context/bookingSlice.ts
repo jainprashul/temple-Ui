@@ -1,8 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { bookingService } from "services/bookingService";
+import { expenseService } from "services/expenseService";
 import { ledgerService } from "services/ledgerService";
 import type { RootState } from "store";
 import type { Booking } from "types/Booking";
+import type { Expense } from "types/Expense";
 import type { Ledger } from "types/Ledger";
 import type { Particulars } from "types/Particulars";
 
@@ -10,12 +12,14 @@ interface InitState {
   bookings : Booking[];
   particulars : Particulars[];
   ledger : Ledger[];
+  expenses : Expense[];
 }
 
 const initialState : InitState = {
   bookings : [],
   particulars : [],
-  ledger : []
+  ledger : [],
+  expenses : []
 }
 
 export const fetchBookings = createAsyncThunk('booking/fetchBookings', async ({
@@ -45,6 +49,17 @@ export const fetchLedger = createAsyncThunk('booking/fetchLedger', async ({
   return response;
 });
 
+export const fetchExpenses = createAsyncThunk('booking/fetchExpenses', async ({
+  from,
+  to
+} : {
+  from : string;
+  to : string;
+}) => {
+  const response = await expenseService.listByRange(from, to);
+  return response;
+});
+
 const bookingSlice = createSlice({
   name : 'booking',
   initialState,
@@ -60,6 +75,9 @@ const bookingSlice = createSlice({
     });
     builder.addCase(fetchLedger.fulfilled, (state, action) => {
       state.ledger = action.payload;
+    });
+    builder.addCase(fetchExpenses.fulfilled, (state, action) => {
+      state.expenses = action.payload
     });
   }
 });

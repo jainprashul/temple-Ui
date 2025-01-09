@@ -9,8 +9,21 @@ export const expenseService = {
         if (error) {
             throw new Error(error.message);
         }
-        return data || [];
+        return data || [] as Expense[];
     },
+
+    listByRange: async (from : string, to : string) => {
+        const { data, error } = await supabase
+            .from('expenses')
+            .select('*')
+            .gte('date', from)
+            .lte('date', to);
+        if (error) {
+            throw new Error(error.message);
+        }
+        return data || [] as Expense[];
+    },
+
     create: async (data : Expense) => {
         const { error } = await supabase
             .from('expenses')
@@ -45,6 +58,6 @@ export const expenseService = {
         if (error) {
             throw new Error(error.message);
         }
-        return data[0];
+        return data[0] as Expense;
     }
 };

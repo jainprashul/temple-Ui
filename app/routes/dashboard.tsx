@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Route } from "./+types/dashboard";
 import { useNavigate } from "react-router";
-import { BOOKING_CREATE, BOOKING_LIST, DEPOSIT, DEVOTEE_CREATE, DEVOTEES, LEDGER, PAYMENT } from "~/constants";
+import { BOOKING_CREATE, BOOKING_LIST, DEPOSIT, DEVOTEE_CREATE, DEVOTEES, EXPENSE_LIST, LEDGER, PAYMENT } from "~/constants";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -37,6 +37,11 @@ function Dashboard() {
     {
       title: "Ledger", description: "दान लेजर", action: () => {
         navigate(LEDGER);
+      }
+    },
+    {
+      title:"Expense List" , description:"Expense List" , action: () => {
+        navigate(EXPENSE_LIST);
       }
     },
     {

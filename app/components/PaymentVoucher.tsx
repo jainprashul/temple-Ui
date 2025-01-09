@@ -9,9 +9,6 @@ type Props = {
 }
 
 const PaymentVoucher = (props: Props) => {
-
-
-
   return (
     <>
     <div ref={props.ref} id='deposit-print' className='mx-auto w-full lg:w-[600px] p-4 bg-white'>
@@ -30,11 +27,8 @@ const PaymentVoucher = (props: Props) => {
         <p className='text-sm'>Date: {moment(props.data.date).format('DD-MM-YYYY')}</p>
       </div>
       <div className='mt-4'>
-        <h3 className='text-lg font-semibold'>Devotee Information</h3>
-        <div className='mt-2'>
           <p className=' '>To: <b>{props.data.to}</b></p>
           <p className=''>From :{props.data.from}</p>
-        </div>
       </div>
       <hr className='my-2' />
       <div className='mt-4'>
