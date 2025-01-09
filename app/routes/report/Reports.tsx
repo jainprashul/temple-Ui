@@ -43,16 +43,16 @@ const Reports = (_: Props) => {
 
 
       {activeTab === 'daywise' && <div >
-        <div className="mt-4 flex justify-end">
-          <input type='month' value={`${year}-${month.toString().padStart(2, '0')}`} onChange={(e) => { const [y, m] = e.target.value.split('-'); setYear(parseInt(y)); setMonth(parseInt(m)); }} />
+        <div className="mt-4 flex ">
+          <input className="input input-bordered w-full max-w-xs"  type='month' value={`${year}-${month.toString().padStart(2, '0')}`} onChange={(e) => { const [y, m] = e.target.value.split('-'); setYear(parseInt(y)); setMonth(parseInt(m)); }} />
         </div>
 
         <table className="table w-full mt-4">
           <thead>
             <tr>
               <th>Date</th>
-              <th>Ledger Amount</th>
-              <th>Ledger Count</th>
+              <th>Deposit Amount</th>
+              <th>Deposit Count</th>
               <th>Booking Amount</th>
               <th>Booking Count</th>
               <th>Expense Amount</th>
@@ -77,7 +77,7 @@ const Reports = (_: Props) => {
 
 
       {activeTab === 'monthwise' && <div>
-        <div className="mt-4 flex justify-end">
+        <div className="mt-4 flex ">
           
           <select className="select select-bordered w-full max-w-xs" value={year} onChange={(e) => { setYear(parseInt(e.target.value)); }}>
             {Array.from({ length: 10 }, (_, i) => <option key={i} value={moment().year() - i}>{moment().year() - i}</option>)}
@@ -88,8 +88,8 @@ const Reports = (_: Props) => {
           <thead>
             <tr>
               <th>Month</th>
-              <th>Ledger Amount</th>
-              <th>Ledger Count</th>
+              <th>Deposit Amount</th>
+              <th>Deposit Count</th>
               <th>Booking Amount</th>
               <th>Booking Count</th>
               <th>Expense Amount</th>

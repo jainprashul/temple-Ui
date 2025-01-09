@@ -69,11 +69,11 @@ const DevoteeView = ({ loaderData }: Route.ComponentProps) => {
 
       <h3 className="text-2xl font-semibold">Bookings</h3>
       <hr className="my-4" />
-      <BookingTable data={bookings} setSelected={setSelectedBooking} />
+      <BookingTable data={bookings} setSelected={setSelectedBooking} hideActions />
 
-      <h3 className="text-2xl font-semibold">Ledger</h3>
+      <h3 className="mt-4 text-2xl font-semibold">Ledger</h3>
       <hr className="my-4" />
-      <LedgerTable data={ledger} setSelected={setSelectedLedger} />
+      <LedgerTable data={ledger} setSelected={setSelectedLedger} hideActions/>
     </div>
   )
 }

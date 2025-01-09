@@ -19,7 +19,8 @@ const BookingTable = ({ setSelected, data, children, hideActions = false}: Props
 
   const navigate = useNavigate();
 
-  const columns = useMemo(() => [
+  const columns = useMemo(() => {
+    const cols = [
     {
       header: 'Date',
       accessorKey: 'date'
@@ -53,11 +54,12 @@ const BookingTable = ({ setSelected, data, children, hideActions = false}: Props
       header: 'Status',
       accessorKey: 'status',
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  ] satisfies ColumnDef<Booking>[], [data.length, navigate]);
+  ] satisfies ColumnDef<Booking>[]
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  if(hideActions) {
-    columns.push(
+  if(!hideActions) {
+    cols.push(
       {
         header: 'Action',
         accessorKey: 'id',
@@ -72,10 +74,15 @@ const BookingTable = ({ setSelected, data, children, hideActions = false}: Props
     )
   }
 
+  return cols
+
+}, [hideActions, navigate]);
+
+
 
   return (
     <>
-    <Table columns={columns} data={data} onRowClick={(row) => {
+    <Table hideHeader={hideActions} columns={columns} data={data} onRowClick={(row) => {
       setSelected(row.original)
     }}>
       {children}

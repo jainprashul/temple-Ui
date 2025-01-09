@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import type { Route } from '../+types/booking'
 import { useNavigate } from 'react-router';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { fetchBookings } from 'store/context/bookingSlice';
@@ -8,6 +7,7 @@ import { BOOKING_CREATE } from '~/constants';
 import { bookingService } from 'services/bookingService';
 import DateSelector from '~/components/DateSelectors';
 import BookingTable from './BookingTable';
+import type { Route } from './+types/BookingList';
 
 
 export function meta(_: Route.MetaArgs) {
