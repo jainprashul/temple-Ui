@@ -24,8 +24,6 @@ const PanchkalyankSchedule = (_props: Props) => {
     <img src="/images/schedule5.jpg" alt="Panchkalyank Schedule" className="mx-auto w-full" />
     <img src="/images/schedule6.jpg" alt="Panchkalyank Schedule" className="mx-auto w-full" />
 
-
-
     </section>
 
     <img src="/images/panchyakalvynak.jpg" alt="Panchkalyank" className="mx-auto w-full" />

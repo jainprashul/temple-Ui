@@ -12,6 +12,7 @@ export default [
     route(VIDEOS, "routes/website/Videos.tsx"),
     route(NEWSLETTER, "routes/website/Newsletter.tsx"),
     route(GALLERY, "routes/website/Gallery.tsx"),
+    route("/join-community", "routes/website/JoinCommunity.tsx"),
 
     route("/newsletter/post", "routes/website/NewsletterPost.tsx"),
     route("/gallery/post", "routes/website/GalleryPost.tsx"),

@@ -26,7 +26,7 @@ export const NavigationHeader: React.FC = () => {
             {link.text}
           </NavLink>
         ))}
-        <button className="btn !bg-yellow-400">Join Our Community</button>
+        <NavLink to='/join-community' className="btn !bg-yellow-400">Join Our Community</NavLink>
       </nav>
     </header>
   );

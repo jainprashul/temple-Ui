@@ -43,6 +43,8 @@ const Newsletter = ({ loaderData }: Route.ComponentProps) => {
 
       </section>
 
+      <img src="/images/panchyakalvynak.jpg" alt="Panchkalyank" className="mx-auto w-full" />
+
     </div>
   )
 }
