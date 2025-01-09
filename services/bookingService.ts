@@ -83,6 +83,25 @@ export const bookingService = {
             throw new Error(error.message);
         }
         return data as Particulars[] || [];
-    }
+    },
+
+    createParticular: async (data : Particulars) => {
+        const { error } = await supabase
+            .from('particulars')
+            .insert(data);
+        if (error) {
+            throw new Error(error.message);
+        }
+    },
+
+    deleteParticular: async (id : string | number) => {
+        const { error } = await supabase
+            .from('particulars')
+            .delete()
+            .match({ id });
+        if (error) {
+            throw new Error(error.message);
+        }
+    },
 
 };

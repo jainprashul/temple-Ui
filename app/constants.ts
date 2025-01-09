@@ -27,4 +27,6 @@ export const BOOKING_CREATE = `/app/booking/create`
 export const BOOKING_LIST = `/app/booking`
 export const LEDGER = `/app/ledger`
 export const EXPENSE_LIST = `/app/expense`
+export const PARTICULARS = `/app/particulars`
+export const PARTICULARS_CREATE = `/app/particulars/new`
 
