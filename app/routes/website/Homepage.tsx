@@ -26,8 +26,8 @@ const Homepage = () => {
 
       <section id="hero" className="hero" >
         <div className="flex flex-1 shrink gap-12  w-full basis-0 max-w-[1200px]  flex-wrap  max-md:max-w-full ">
-          <div className="flex text-center flex-col flex-1  justify-center my-auto basis-0 max-w-[720px] min-h-[628px] min-w-[280px] max-md:max-w-full max-sm:min-h-[554px]">
-            <div className="flex flex-col justify-center w-full max-md:max-w-full px-2">
+          <div className="flex text-center flex-col flex-1  justify-center my-auto basis-0 max-w-[720px] min-h-[628px] min-w-[280px] max-md:max-w-full max-sm:min-h-[440px] px-4">
+            <div className="flex flex-col justify-center w-full max-md:max-w-full ">
               <h1 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">
                 श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव
               </h1>
@@ -42,7 +42,7 @@ const Homepage = () => {
           </div>
           <div className="flex overflow-hidden flex-1 shrink gap-2 justify-center items-center self-stretch my-auto bg-white basis-0 h-[704px] min-w-[280px] rounded-[32px] max-md:max-w-full max-sm:h-[509px]">
 
-            <div className="carousel w-full" id="carousel">
+            <div className="carousel p-4 w-full" id="carousel">
 
               {slides.map((slide, index) => (
                 <div
@@ -61,10 +61,19 @@ const Homepage = () => {
       </section>
 
       <section id='panchkalyanak' className="bg-[#fffce4]">
-        <img src="/images/adinath-wide.png" alt="Panchkalyank" className="mx-auto w-[90%] py-4" />
+        <div className='flex flex-wrap items-center justify-evenly w-full max-w-[1200px] min-w-[240px] mx-auto py-16 px-2'>
+          
+          <img src='/images/adinath.png' alt='Panchkalyank' className='' />
+          <img src='/images/ahinsa.png' alt='Panchkalyank' className='w-20 hidden lg:block' />
+          <img src='/images/adinath2.png' alt='Panchkalyank' className='' />
+          <img src='/images/ahinsa.png' alt='Panchkalyank' className='w-20 hidden lg:block' />
+          <img src='/images/adinath3.png' alt='Panchkalyank' className='' />
+          
+    
+        </div>
         <div className="flex flex-col items-center justify-center w-full max-w-[1200px] min-w-[240px] mx-auto py-16 px-2">
 
-          <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">पंचकल्याणक प्रतिष्ठा महामहोत्सव 2025</h2>
+          <h2 className="text-4xl font-black tracking-tight leading-10 text-center text-zinc-900 max-md:max-w-full">पंचकल्याणक प्रतिष्ठा महामहोत्सव 2025</h2>
           <h5 className="text-2xl font-black tracking-tight leading-8 text-zinc-900 max-md:max-w-full">आदिनाथ धाम मंदिर, छिंदवाड़ा</h5>
           <br />
           <h6 className='text-2xl font-black tracking-tight leading-8 text-zinc-900 max-md:max-w-full'>15 जनवरी से 20 जनवरी 2025</h6>
@@ -72,10 +81,17 @@ const Homepage = () => {
           <p className="mt-4 text-2xl leading-8 text-zinc-500 max-md:max-w-full">
             श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव 2025 के अवसर पर आप सभी का हार्दिक स्वागत है। इस अवसर पर आप सभी को आदिनाथ धाम मंदिर में आमंत्रित किया जाता है।
           </p>
+          <p className="mt-4 text-2xl leading-8 text-zinc-500 max-md:max-w-full">
+            पंचकल्याणक एक ऐसी प्रक्रिया है जिसमें जिनेन्द्र भगवान के जीवन के पांच महत्वपूर्ण कार्यों का वर्णन किया गया है। यह प्रक्रिया जिनेन्द्र भगवान के जीवन के पांच महत्वपूर्ण कार्यों का वर्णन करती है जिसमें उनके जन्म, दीक्षा, ज्ञान, तप और मोक्ष का वर्णन है।
+          </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <NavLink to='/panchkalyank' className="btn !bg-yellow-400">Explore Panchkalyanak</NavLink>
           </div>
         </div>
+      </section>
+
+      <section id='events' className="container mx-auto py-16">
+        <img src="/images/prasadsagar.jpg" alt="Panchkalyank" className="mx-auto aspect-auto lg:h-[80vh]" />
       </section>
 
       <section id='location' className="max-w-[900px] mx-auto py-16">
@@ -105,7 +121,7 @@ const Homepage = () => {
               <a target='_blank' href='https://maps.app.goo.gl/3r3yvY5JdeRAb1zV6' className="btn !bg-yellow-400" rel="noreferrer">Explore Location</a>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center p-4 bg-yellow-400">
+          <div className="flex flex-col  justify-center items-center p-4 bg-yellow-400">
             <MapPinIcon size={64} className="mb-2" />
             <h2 className="text-4xl font-black text-center tracking-tight leading-10 text-zinc-900 max-md:max-w-full">
               अयोध्या नगरी, जैल बागीचा
