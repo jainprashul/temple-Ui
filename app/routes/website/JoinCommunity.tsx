@@ -41,7 +41,7 @@ const JoinCommunity = (_props: Props) => {
                   17 जनवरी 2025 को होने जा रहे जन्माभिषेक कलश के बुकिंग के लिए यहाँ क्लिक करें
                 </p>
                 <div className="card-actions justify-end">
-                <a href='https://forms.gle/D5MieFk5hw2AJYUS7' target='_blank' className="btn btn-primary" rel="noreferrer">
+                  <a href='https://forms.gle/D5MieFk5hw2AJYUS7' target='_blank' className="btn btn-primary" rel="noreferrer">
                     बुकिंग करें
                   </a>
                 </div>
@@ -50,13 +50,13 @@ const JoinCommunity = (_props: Props) => {
             <div className="card bg-base-100 w-96 shadow-xl">
               <div className="card-body">
                 <h2 className="card-title">
-                उपनयन संस्कार
+                  उपनयन संस्कार
                 </h2>
                 <p>
                   उपनयन संस्कार के लिए बुकिंग के लिए यहाँ क्लिक करें
                 </p>
                 <div className="card-actions justify-end">
-                <a href='https://forms.gle/XdYZ1djhW4PDxoQZ8' target='_blank' className="btn btn-primary" rel="noreferrer">
+                  <a href='https://forms.gle/XdYZ1djhW4PDxoQZ8' target='_blank' className="btn btn-primary" rel="noreferrer">
                     बुकिंग करें
                   </a>
                 </div>
@@ -66,7 +66,44 @@ const JoinCommunity = (_props: Props) => {
 
 
 
+          <h1 className='text-3xl text-center font-bold'>Follow us on social media</h1>
           <div className="flex flex-wrap justify-center gap-4 mt-8   mb-4">
+            {/*QR for social media */}
+       
+          <div className="card bg-base-100 w-96 shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title">
+                Instagram
+              </h2>
+              <p>
+                Follow us on Instagram
+              </p>
+              <img src="/images/instaqr.svg" alt="Instagram" className="mx-auto w-1/2" />
+              <div className="card-actions ">
+                <a href="https://www.instagram.com/chhindwara_ke_bade_baba125" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
+                  Follow
+                </a>
+              </div>
+            </div>
+            </div>
+            
+
+            <div className="card bg-base-100 w-96 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">
+                  YouTube
+                </h2>
+                <p>
+                  Follow us on YouTube
+                </p>
+                <img src="/images/youtubeqr.svg" alt="YouTube" className="mx-auto w-1/2" />
+              <div className="card-actions">
+                <a href="http://www.youtube.com/@AadinathdhamChhindwara" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
+                  Follow
+                </a>
+              </div>
+              </div>
+            </div>
           </div>
 
 
