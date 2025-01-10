@@ -9,7 +9,7 @@ const navigationLinks = [
 
 export const NavigationHeader: React.FC = () => {
   return (
-    <header className="flex w-full flex-wrap justify-between items-center p-2 sticky top-0 bg-[#fffce4] shadow-md gap-4 text-zinc-900">
+    <header className="flex w-full flex-wrap justify-between items-center p-2 sticky top-0 bg-[#fffce4] shadow-md gap-4 text-zinc-900 z-30">
       <div id='logo' className='flex items-center gap-2'>
         <img
           src="/temple.svg"

@@ -30,7 +30,7 @@ const PanchkalyankAbout = (_props: Props) => {
             <h4 className='text-2xl font-semibold justify-center'>
               ध्वजारोहण
             </h4>
-            <p className="mt-4 text-xl leading-8 text-center text-zinc-500 max-md:max-w-full">
+            <p className="mt-4 text-xl leading-8 text-center whitespace-pre-line text-zinc-500 max-md:max-w-full">
               श्री तीर्थंकर भगवान के आत्मा को पूर्वभव में आत्मभान सहित शुभ-विकल्प उठने पर तीर्थंकर नामकर्म बंधता है ।
               तीर्थंकर होनेवाले विशिष्ट जीवों को ही वह प्रकृति बंधती है ।
               माता के गर्भ में तीर्थंकर भगवान के आत्मा के आने के छ्ह माह पहले से देवता, माता की सेवा करने के लिए आते हैं । वे कहते हैं – “अहो माता ! आप धन्य हैं । आप न केवल भगवान की माता हो, बल्कि सारे जगत की माता हो ।” – इत्यादि अनेक प्रकार से वे माता की भक्ति करते हैं और कुबेर उनके घर पर सदा रत्नवर्षा करते हैं ।

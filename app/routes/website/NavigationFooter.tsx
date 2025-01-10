@@ -53,7 +53,7 @@ export const NavigationFooter: React.FC = () => {
           </div>
         </div>
         <div className="flex overflow-hidden flex-1 shrink gap-6 items-start text-sm leading-relaxed whitespace-nowrap basis-0 text-zinc-900">
-          <SocialLinksColumn links={socialLinksColumn2} />
+          {/* <SocialLinksColumn links={socialLinksColumn2} /> */}
           <SocialLinksColumn links={socialLinksColumn1} />
         </div>
       </div>
@@ -76,10 +76,10 @@ export const NavigationFooter: React.FC = () => {
 
 
 export const SocialLinksColumn: React.FC<SocialLinksColumnProps> = ({ links }) => (
-  <div className="flex flex-col flex-1 shrink basis-0">
+  <div className="flex flex-col lg:flex-row lg:gap-6 flex-1 shrink basis-0">
     {links.map((link, index) => (
-      <div key={link.name} className={index > 0 ? "mt-3" : ""}>
-        <a target="" href={link.url} className="text-zinc-900 hover:underline">
+      <div key={link.name} className={`flex flex-col ${index === 0 ? "" : "mt-6"} lg:mt-0`}>
+        <a target="_blank" href={link.url} className="text-zinc-900 hover:underline" rel="noreferrer">
           {link.name}
         </a>
       </div>

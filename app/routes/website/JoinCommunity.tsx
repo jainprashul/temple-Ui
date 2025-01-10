@@ -5,7 +5,7 @@ type Props = {}
 const JoinCommunity = (_props: Props) => {
   return (
     <div>
-      <section className="container mx-auto p-4">
+      <section className="container mx-auto p-4 min-h-[70vh]">
         <div className='space-y-4'>
           <h1 className='text-4xl text-center font-bold'>Join our community</h1>
 
@@ -62,6 +62,11 @@ const JoinCommunity = (_props: Props) => {
                 </div>
               </div>
             </div>
+          </div>
+
+
+
+          <div className="flex flex-wrap justify-center gap-4 mt-8   mb-4">
           </div>
 
 

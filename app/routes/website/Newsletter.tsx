@@ -20,7 +20,7 @@ export async function clientLoader(_: Route.ClientLoaderArgs) {
 const Newsletter = ({ loaderData }: Route.ComponentProps) => {
   return (
     <div id="newsletter">
-      <section className='container mx-auto px-5 py-10'>
+      <section className='container mx-auto px-5 py-10 min-h-[70vh]'>
         <div className="py-5 text-center">
           <h2 className='text-4xl font-bold'>Our Newsletter</h2>
           <p className='text-lg'>Get the latest updates.</p>

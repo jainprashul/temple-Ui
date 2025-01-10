@@ -35,7 +35,12 @@ const Panchkalyank = (_: Props) => {
         <NavLink to='/panchkalyank-schedule' className="btn btn-lg !bg-yellow-400">
           कार्यक्रम सूची
         </NavLink>
+
+
       </div>
+        <img src="/images/prasadsagar.jpg" alt="Panchkalyank" className="mx-auto aspect-auto lg:h-[80vh]" />
+
+
 
       <img src="/images/panchyakalvynak.jpg" alt="Panchkalyank" className="mx-auto w-full" />
 

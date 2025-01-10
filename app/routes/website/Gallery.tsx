@@ -46,7 +46,7 @@ function ImageCard({ data }: ImageCardProps) {
   // const url = `https://gkqujdsynxplbgsulaxn.supabase.co/storage/v1/object/public/${data.url}`
   return (
     <div className="bg-gray-100 p-4 rounded-lg ">
-      <iframe loading='lazy' src={data.url} className="w-full h-96" />
+      <iframe loading='lazy'  sandbox="allow-scripts allow-same-origin" src={data.url} className="w-full h-96" />
       <h3 className='text-lg'>{data.name}</h3>
     </div>
   )
