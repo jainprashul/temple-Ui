@@ -17,7 +17,7 @@ export const NavigationHeader: React.FC = () => {
           className="object- shrink-0 self-stretch my-auto aspect-square w-[50px]"
         />
         <NavLink to='/' className="gap-2 cursor-pointer self-stretch px-2 my-auto text-4xl font-extrabold min-w-[240px]">
-          श्री आदिनाथ धाम, छिन्दवाड़ा
+          श्री १००८ आदिनाथ धाम
         </NavLink>
       </div>
       <nav className="flex flex-wrap gap-3 my-auto text-xs ">
