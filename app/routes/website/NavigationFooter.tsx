@@ -1,23 +1,4 @@
 
-export interface SocialMediaLink {
-  name: string;
-  url: string;
-}
-
-
-
-export interface SocialLinksColumnProps {
-  links: SocialMediaLink[];
-}
-
-const socialLinksColumn1: SocialMediaLink[] = [
-  { name: "Facebook", url: "#" },
-  { name: "Instagram", url: "https://www.instagram.com/chhindwara_ke_bade_baba125" },
-  { name: "YouTube", url: "http://www.youtube.com/@AadinathdhamChhindwara" },
-];
-
-const socialLinksColumn2: SocialMediaLink[] = [
-];
 
 export const NavigationFooter: React.FC = () => {
   return (
@@ -31,7 +12,7 @@ export const NavigationFooter: React.FC = () => {
             <div className="flex flex-col w-full text-sm leading-relaxed text-zinc-900 max-md:max-w-full">
               <div className="max-md:max-w-full">Location:</div>
               <div className="mt-1 max-md:max-w-full">
-                मूल मंदिर (पाषाण जिनालय), गोलगंज, छिंदवाड़ा 480001 (म.प्र.)
+              श्री 1008 आदिनाथ धाम, दिगम्बर जैन मंदिर , गोलगंज, छिंदवाड़ा 480001 (म.प्र.)
               </div>
             </div>
             <div className="flex flex-col mt-6 w-full text-sm text-zinc-900 max-md:max-w-full">
@@ -54,7 +35,7 @@ export const NavigationFooter: React.FC = () => {
         </div>
         <div className="flex overflow-hidden flex-1 shrink gap-6 items-start text-sm leading-relaxed whitespace-nowrap basis-0 text-zinc-900">
           {/* <SocialLinksColumn links={socialLinksColumn2} /> */}
-          <SocialLinksColumn links={socialLinksColumn1} />
+          {/* <SocialLinksColumn links={socialLinksColumn1} /> */}
         </div>
       </div>
       <div className="flex flex-col mt-20 w-full text-sm leading-relaxed text-zinc-900 max-md:mt-10 max-md:max-w-full">
@@ -74,15 +55,3 @@ export const NavigationFooter: React.FC = () => {
   );
 };
 
-
-export const SocialLinksColumn: React.FC<SocialLinksColumnProps> = ({ links }) => (
-  <div className="flex flex-col lg:flex-row lg:gap-6 flex-1 shrink basis-0">
-    {links.map((link, index) => (
-      <div key={link.name} className={`flex flex-col ${index === 0 ? "" : "mt-6"} lg:mt-0`}>
-        <a target="_blank" href={link.url} className="text-zinc-900 hover:underline" rel="noreferrer">
-          {link.name}
-        </a>
-      </div>
-    ))}
-  </div>
-);

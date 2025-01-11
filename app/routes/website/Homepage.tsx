@@ -163,7 +163,7 @@ const Homepage = () => {
           <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">आदिनाथ धाम मंदिर के लिए गुरुओ के विचार </h2>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-8">
             <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url: 'https://www.youtube.com/embed/V81WUXKeLWI' }} />
-            <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url :"https://www.youtube.com/embed/4h-t-2umKP8" }} />
+            <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url :"https://www.youtube.com/embed/WL5LSBbXFQI" }} />
             <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url: 'https://www.youtube.com/embed/lGEz_IcDYU4' }} />
           </div>
         </div>

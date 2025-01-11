@@ -23,6 +23,9 @@ const PanchkalyankAbout = (_props: Props) => {
           देखो ! इस प्रतिष्ठा महोत्सव में यदि आत्मा के स्वभाव को समझे तो आत्मा में धर्म की प्रतिष्ठा होगी । वास्तव में जो चैतन्य के भान सहित पंचकल्याणक देखता है, उसने ही भगवान के पंचकल्याणक साक्षात देखे ।
           यहां पंचकल्याणक महोत्सव में भी आत्मा को समझने की ही मुख्यता है । यह महोत्सव अनंत भवों का नाश करनेवाला है । भगवान ने आत्मा का जैसा स्वरूप बताया है, वैसा जानना और मानना ही सच्चा महोत्सव है ।
         </p>
+        <iframe className='mx-auto w-full h-[400px] lg:w-[70%]
+' src="https://www.youtube.com/embed/lgTCKw1ZwW0?si=6CG07PptgyNLew2i" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
           <img src="/images/dhwaja.png" alt="Panchkalyank" className="mx-auto  h-[350px]" />

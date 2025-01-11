@@ -7,13 +7,22 @@ const Panchkalyank = (_: Props) => {
   return (
     <div>
       <section className="container mx-auto p-4">
-        <img src="/images/guru.png" alt="Panchkalyank" className="mx-auto w-full" />
+        {/* <img src="/images/guru.png" alt="Panchkalyank" className="mx-auto w-full" /> */}
+        <div className='flex items-end justify-center w-full flex-wrap gap-8 mx-auto py-4 px-2 bg-[#fffce4]'>
+          <img src='/images/sudha.png' alt='Panchkalyank' className='w-60 hidden lg:block' />
+          <img src='/images/achayashree.png' alt='Panchkalyank' className='w-72' />
+          <img src='/images/samay.png' alt='Panchkalyank' className='w-64' />
+          <img src='/images/sudha.png' alt='Panchkalyank' className='w-64 lg:hidden' />
+        
+        </div>
         <div className="flex flex-col items-center justify-center w-full max-w-[1200px] min-w-[240px] mx-auto py-4 px-2">
 
           <div className='space-y-4'>
-            <h1 className='text-4xl text-center font-bold'>श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव </h1>
-            <h2 className='text-2xl text-center font-semibold'>15 जनवरी से 20 जनवरी 2025</h2>
-            <p className='text-xl text-center font-semibold'>आदिनाथ धाम मंदिर, छिंदवाड़ा</p>
+            <h1 className='text-4xl text-center font-extrabold text-green-700' style={{
+              textShadow: '2px 2px 0px rgba(0,0,0,0.2)'
+            }}>श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव </h1>
+            <h2 className='text-2xl text-center font-semibold  '>15 जनवरी से 20 जनवरी 2025</h2>
+            <p className='text-2xl text-center font-semibold text-pink-600'>आदिनाथ धाम मंदिर, छिंदवाड़ा</p>
           </div>
 
 

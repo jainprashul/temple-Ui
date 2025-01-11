@@ -62,6 +62,21 @@ const JoinCommunity = (_props: Props) => {
                 </div>
               </div>
             </div>
+            <div className="card bg-base-100 w-96 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">
+                  गर्भ संस्कार फॉर्म 
+                </h2>
+                <p>
+                  गर्भ संस्कार के लिए रजिस्टर करने हेतु यहाँ क्लिक करें
+                </p>
+                <div className="card-actions justify-end">
+                  <a href='https://forms.gle/nZY51zJQATrZMcGs8' target='_blank' className="btn btn-primary" rel="noreferrer">
+                    रजिस्टर करें
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
 
@@ -73,14 +88,14 @@ const JoinCommunity = (_props: Props) => {
           <div className="card bg-base-100 w-96 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">
-                Instagram
+                Facebook
               </h2>
               <p>
-                Follow us on Facebook``
+                Follow us on Facebook
               </p>
               <img src="/images/fbqr.svg" alt="Instagram" className="mx-auto w-1/2" />
               <div className="card-actions ">
-                <a href="https://www.facebook.com/profile.php?id=61571388677673&mibextid=ZbWKwL" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
+                <a href="https://www.facebook.com/profile.php?id=61571553134139&mibextid=ZbWKwL" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
                   Follow
                 </a>
               </div>
@@ -96,7 +111,7 @@ const JoinCommunity = (_props: Props) => {
               </p>
               <img src="/images/instaqr.svg" alt="Instagram" className="mx-auto w-1/2" />
               <div className="card-actions ">
-                <a href="https://www.instagram.com/chhindwara_ke_bade_baba125" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
+                <a href="https://www.instagram.com/aadinathdham_chhindwara?igsh=MWtoMG9tcGJvdjJqZg==" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
                   Follow
                 </a>
               </div>
@@ -115,6 +130,23 @@ const JoinCommunity = (_props: Props) => {
                 <img src="/images/youtubeqr.svg" alt="YouTube" className="mx-auto w-1/2" />
               <div className="card-actions">
                 <a href="http://www.youtube.com/@AadinathdhamChhindwara" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
+                  Follow
+                </a>
+              </div>
+              </div>
+            </div>
+
+            <div className="card bg-base-100 w-96 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">
+                  WhatsApp
+                </h2>
+                <p>
+                  Join our WhatsApp group
+                </p>
+                <img src="/images/whatsappqr.svg" alt="YouTube" className="mx-auto w-1/2" />
+              <div className="card-actions">
+                <a href="https://chat.whatsapp.com/ISz9pSuA0Xr8T4zO25yU8T" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
                   Follow
                 </a>
               </div>
