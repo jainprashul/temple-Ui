@@ -21,12 +21,12 @@ const Panchkalyank = (_: Props) => {
             <h1 className='text-4xl text-center font-extrabold text-green-700' style={{
               textShadow: '2px 2px 0px rgba(0,0,0,0.2)'
             }}>श्री 1008 श्रीमज्जिनेन्द्र आदिनाथ जिनबिंब पंचकल्याणक प्रतिष्ठा महामहोत्सव </h1>
-            <h2 className='text-2xl text-center font-semibold  '>15 जनवरी से 20 जनवरी 2025</h2>
+            <h2 className='text-2xl text-center font-semibold lg:hidden '>15 जनवरी से 20 जनवरी 2025</h2>
             <p className='text-2xl text-center font-semibold text-pink-600'>आदिनाथ धाम मंदिर, छिंदवाड़ा</p>
           </div>
 
 
-          <div className="flex flex-wrap justify-center gap-4 mt-8  border-2 rounded-lg p-4  shadow-xl mb-4">
+          <div className="flex flex-wrap justify-center gap-4 mt-8  border-2 rounded-lg p-4 shadow-xl mb-4">
             <img src="/images/mini-banner.jpg" alt="Panchkalyank" className="mx-auto w-[80%]" />
           </div>
 
