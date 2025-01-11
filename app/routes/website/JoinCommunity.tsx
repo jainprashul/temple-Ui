@@ -76,6 +76,22 @@ const JoinCommunity = (_props: Props) => {
                 Instagram
               </h2>
               <p>
+                Follow us on Facebook``
+              </p>
+              <img src="/images/fbqr.svg" alt="Instagram" className="mx-auto w-1/2" />
+              <div className="card-actions ">
+                <a href="https://www.facebook.com/profile.php?id=61571388677673&mibextid=ZbWKwL" target='_blank' className="btn btn-primary w-full" rel="noreferrer">
+                  Follow
+                </a>
+              </div>
+            </div>
+            </div>
+          <div className="card bg-base-100 w-96 shadow-xl">
+            <div className="card-body">
+              <h2 className="card-title">
+                Instagram
+              </h2>
+              <p>
                 Follow us on Instagram
               </p>
               <img src="/images/instaqr.svg" alt="Instagram" className="mx-auto w-1/2" />

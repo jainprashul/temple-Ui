@@ -162,9 +162,9 @@ const Homepage = () => {
         <div className="flex flex-col items-center justify-center w-full max-w-[1200px] min-w-[240px] mx-auto py-16 px-2">
           <h2 className="text-4xl font-black tracking-tight leading-10 text-zinc-900 max-md:max-w-full">आदिनाथ धाम मंदिर के लिए गुरुओ के विचार </h2>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-8">
-            <PortraitVideoCards data={{ title: 'गुरुओ के विचार' }} />
-            <PortraitVideoCards data={{ title: 'गुरुओ के विचार' }} />
-            <PortraitVideoCards data={{ title: 'गुरुओ के विचार' }} />
+            <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url: 'https://www.youtube.com/embed/V81WUXKeLWI' }} />
+            <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url :"https://www.youtube.com/embed/4h-t-2umKP8" }} />
+            <PortraitVideoCards data={{ title: 'गुरुओ के विचार', url: 'https://www.youtube.com/embed/lGEz_IcDYU4' }} />
           </div>
         </div>
       </section>
@@ -181,7 +181,7 @@ export default Homepage
 function PortraitVideoCards({ data }: { data: any }) {
   return (
     <div className="bg-yellow-200 p-4 rounded-lg">
-      <iframe loading='lazy' width="100%" height="512px" src={`https://www.youtube.com/embed/lGEz_IcDYU4`} title={data.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      <iframe loading='lazy' width="100%" height="512px" src={data.url} title={data.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
     </div>
   )
 }
