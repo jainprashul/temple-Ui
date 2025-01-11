@@ -6,7 +6,7 @@ export const NavigationFooter: React.FC = () => {
       <div className="flex flex-wrap gap-10 items-start w-full max-md:max-w-full">
         <div className="flex overflow-hidden flex-col min-w-[240px] w-[864px] max-md:max-w-full">
           <div className="text-lg text-zinc-900 max-md:max-w-full">
-            श्री आदिनाथ धाम, छिन्दवाड़ा
+            श्री 1008 आदिनाथ धाम, छिन्दवाड़ा
           </div>
           <div className="flex flex-col mt-8 w-full max-md:max-w-full">
             <div className="flex flex-col w-full text-sm leading-relaxed text-zinc-900 max-md:max-w-full">
